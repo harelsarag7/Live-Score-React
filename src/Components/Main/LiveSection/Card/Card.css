@@ -1,0 +1,55 @@
+.Card {
+    color: white;
+    background-image: url("/src/cardBackgroundImage.jpg");
+    width: 310px;
+    max-height: 233px;
+    border-radius: 60px;
+    /* background-color: hsla(147, 86%, 44%, 0.863);  */
+    background-color: #000000ec;
+    background-size: cover;
+    /* opacity: 0.7; */
+    background-blend-mode: darken;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around !important;
+    align-items: center;
+    height: 210px;
+    flex-shrink: 0;
+    margin: 20px;
+}
+
+.team {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.team-logo {
+    width: 80px;
+}
+
+.score-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 16px;
+    margin:0 15px;
+}
+
+.score-live {
+    font-size: 25px;
+}
+
+.info-container {
+    display: flex;
+    /* position: relative; */
+    align-items: center;
+    /* top: 20px; */
+}
+
+.icons img {
+    margin: 0 25px;
+    width: 12%;
+}
