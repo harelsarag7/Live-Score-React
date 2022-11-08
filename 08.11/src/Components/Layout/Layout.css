@@ -1,8 +1,0 @@
-:root{
-    --dark-color:  rgb(32, 32, 32);
-}
-
-.Layout {
-	/* background-color: var(--dark-color); */
-    height: 100vh;
-}
