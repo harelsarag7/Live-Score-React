@@ -6,13 +6,13 @@ function LiveSection(): JSX.Element {
 const [games, SetGames] = useState<LiveScore[]>([])
 const apiKey = "581fb55ff92d00056049811d83a45652c46ae3ff89ec0166c24366d92d25a22c"
 
-// async function getApiData() {
-//   const response = await fetch(
-//     `https://apiv2.allsportsapi.com/football/?met=Livescore&APIkey=${apiKey}`
-//   ).then((response) => response.json());
+async function getApiData() {
+  const response = await fetch(
+    `https://apiv2.allsportsapi.com/football/?met=Livescore&APIkey=${apiKey}`
+  ).then((response) => response.json());
 
-//   return SetGames(response.result); 
-//   }
+  return SetGames(response.result); 
+  }
 
 
 
@@ -36,16 +36,40 @@ const apiKey = "581fb55ff92d00056049811d83a45652c46ae3ff89ec0166c24366d92d25a22c
 //     }
 
 //  get games from spesific country
-async function getApiData() {
-  const response = await fetch(
-    `https://apiv2.allsportsapi.com/football/?met=Livescore&countryId=62&APIkey=${apiKey}`
-  ).then((response) => response.json());
-return SetGames(response.result); 
-}
+// async function getApiData() {
+//   const response = await fetch(
+//     `https://apiv2.allsportsapi.com/football/?met=Livescore&countryId=62&APIkey=${apiKey}`
+//   ).then((response) => response.json());
+// return SetGames(response.result); 
+// }
 
 // country id 62 = israel
 // country id 6 = spain
   
+
+function getScorers(game: LiveScore) {
+   // alert("hey")
+   let home_scorers = []
+   let away_scorers = []
+   for(let i = 0; i < game.goalscorers.length; i++){
+     if(game.goalscorers[i].home_scorer){
+       home_scorers.push(game.goalscorers[i].home_scorer? game.goalscorers[i].home_scorer : <></> )
+     } else if(game.goalscorers[i].away_scorer){
+ 
+       away_scorers.push(game.goalscorers[i].away_scorer? game.goalscorers[i].away_scorer : <></> )
+     } 
+   }
+ 
+     if(home_scorers.length === 0){
+       home_scorers.push("No Goals")
+     }
+     if(away_scorers.length === 0){
+       away_scorers.push("No Goals")
+     } 
+   
+
+   return alert(`${game.event_home_team}: ${home_scorers} \n ${game.event_away_team}: ${away_scorers}  `)
+}
 
   useEffect(() => {
     getApiData()
@@ -58,7 +82,7 @@ return SetGames(response.result);
         <div className="LiveSection">
             <div id="live-games-container">
                 {games.map((item) => {
-                    return <Card  game={item}/>
+                    return <Card onclick={() => alert(item)} key={item.event_key} game={item}/>
                 })}
             </div>
         </div>

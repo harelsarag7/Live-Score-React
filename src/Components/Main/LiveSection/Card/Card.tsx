@@ -98,31 +98,34 @@ export interface LiveScore {
    cards: Card[];
    lineups: Lineups;
    statistics: Statistic[];
+
+   
    getScorers: void;
+   onclick:  () => void;
 }
-function getScorers(game: LiveScore) {
-   // alert("hey")
-   let home_scorers = []
-   let away_scorers = []
-   for(let i = 0; i < game.goalscorers.length; i++){
-     if(game.goalscorers[i].home_scorer){
-       home_scorers.push(game.goalscorers[i].home_scorer? game.goalscorers[i].home_scorer : <></> )
-     } else if(game.goalscorers[i].away_scorer){
+// function getScorers(game: LiveScore) {
+//    // alert("hey")
+//    let home_scorers = []
+//    let away_scorers = []
+//    for(let i = 0; i < game.goalscorers.length; i++){
+//      if(game.goalscorers[i].home_scorer){
+//        home_scorers.push(game.goalscorers[i].home_scorer? game.goalscorers[i].home_scorer : <></> )
+//      } else if(game.goalscorers[i].away_scorer){
  
-       away_scorers.push(game.goalscorers[i].away_scorer? game.goalscorers[i].away_scorer : <></> )
-     } 
-   }
+//        away_scorers.push(game.goalscorers[i].away_scorer? game.goalscorers[i].away_scorer : <></> )
+//      } 
+//    }
  
-     if(home_scorers.length === 0){
-       home_scorers.push("No Goals")
-     }
-     if(away_scorers.length === 0){
-       away_scorers.push("No Goals")
-     } 
+//      if(home_scorers.length === 0){
+//        home_scorers.push("No Goals")
+//      }
+//      if(away_scorers.length === 0){
+//        away_scorers.push("No Goals")
+//      } 
    
 
-   return alert(`${game.event_home_team}: ${home_scorers} \n ${game.event_away_team}: ${away_scorers}  `)
-}
+//    return alert(`${game.event_home_team}: ${home_scorers} \n ${game.event_away_team}: ${away_scorers}  `)
+// }
 function Card({ game }: { game: LiveScore }): JSX.Element {
 
    return (
@@ -153,7 +156,7 @@ function Card({ game }: { game: LiveScore }): JSX.Element {
          </div>
 
          <div className="icons">
-            <img className="scorers-icon" src="https://i.ibb.co/yp992z3/football.png"  alt="" width={35} />
+            <img className="scorers-icon" src="https://i.ibb.co/yp992z3/football.png" onClick={onclick} alt="" width={35} />
             <img className="statistic-icon" src="https://i.ibb.co/xfFn4fq/pie-chart.png" alt="" width={35} />
             <img className="cards-icon" src="https://i.ibb.co/74K67wD/flash-cards.png" alt="" width={35} />
          </div>

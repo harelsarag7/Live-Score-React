@@ -14,7 +14,7 @@ function Home() {
                 <LiveSection />
             </div>
             <div className="LeagueDiv">
-                {leauges.map((league) => <League name={league} onclick={()=> alert(league)}/>)}
+                {leauges.map((league) => <League key={league} name={league} onclick={()=> alert(league)}/>)}
             </div>
         </div>
     )
