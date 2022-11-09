@@ -8,7 +8,7 @@ export interface LeagueProps{
 function League ({ onclick, name }:LeagueProps){
     return(
         <div className='League'>
-            <div onClick={onclick}>
+            <div className='leagueName' onClick={onclick}>
                 <p>{name}</p>
             </div>
         </div>

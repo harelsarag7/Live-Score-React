@@ -7,12 +7,13 @@
     background-color: #0E5E6F;
 }
 
-.Header h1{
-    margin: 0;
-}
-
-.HeaderH1Div{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+#logo{
+    position: relative;
+    top: 25px;
+    color: white;
+    background-image: url("../../../src/logo-no-background.png");
+    width: 400px;
+    height: 60px ;
+    margin: 0 auto;
+    background-size:cover;
 }

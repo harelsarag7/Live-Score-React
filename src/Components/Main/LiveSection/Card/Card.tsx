@@ -159,7 +159,8 @@ export interface CardLiveGame{
    event_status: string;
    away_team_logo: string;
    home_scorer?:string | undefined
-   away_scorer?:string | undefined
+   away_scorer?:string | undefined;
+   event_key?: number
    onclick:()=> void
 
 }

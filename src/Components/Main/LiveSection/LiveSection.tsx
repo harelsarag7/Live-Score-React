@@ -7,31 +7,43 @@ import League from "../League/League";
 const Leagues = [
   {
       name: 'Champion League',
-      id: 2
+      id: 2,
+      countryId: 1
+
   },
   {
       name: 'Premier Leauge',
-      id: 152
+      id: 152,
+      countryId: 44
+
   },
   {
       name: 'La Liga',
-      id: 302
+      id: 302,
+      countryId: 6
+
   },
   {
       name: 'BundesLiga',
-      id: 56
+      id: 171,
+      countryId: 4
+
   },
   {
       name: 'Serie A',
-      id: 207
+      id: 207,
+      countryId: 5
+
   },
   {
       name: 'Israel League',
-      id: 202
+      id: 202,
+      countryId: 62
   },
   {
       name: 'World Cup',
-      id: 28
+      id: 28,
+      countryId: 8
   },
 ]
 
@@ -71,7 +83,7 @@ async function getApiDataLastGame() {
 
 
 // goalsscorers - need to change to modal or collape
-// function getScores(game: any) {
+// function getScorers(game: any) {
 //     let home_scorers = []
 //     let away_scorers = []
 //     for(let i = 0; i < game.goalscorers.length; i++){
@@ -87,7 +99,7 @@ async function getApiDataLastGame() {
 //       } else if(away_scorers.length === 0){
 //         away_scorers.push("No Goals")
 //       } 
-//     }
+//     }}
 
 //  get games from spesific country
 // async function getApiData() {
@@ -100,15 +112,56 @@ async function getApiDataLastGame() {
 // country id 62 = israel
 // country id 6 = spain
 
-async function LeagueOnClick(leagueId :number){
+function getYesterdayDate() {
+  let newDate = new Date();
+  let compilerDate = new Date(newDate.getFullYear(), newDate.getMonth(), newDate.getDate()-1);
+
+  let dd = String(compilerDate.getDate()).padStart(2, '0');
+  let mm = String(compilerDate.getMonth() + 1).padStart(2, '0'); //January is 0!
+  let yyyy = compilerDate.getFullYear();
+  
+  let yesterday =  `${yyyy}-${mm}-${dd}`;
+
+console.log(yesterday);
+  return yesterday;
+}
+
+
+function getDateBeforeWeek() {
+    let today = new Date();
+    let compilerDate = new Date(today.getFullYear(), today.getMonth(), today.getDate()-7);
+
+    let dd = String(compilerDate.getDate()).padStart(2, '0');
+  let mm = String(compilerDate.getMonth() + 1).padStart(2, '0');
+  let yyyy = compilerDate.getFullYear();
+  
+  let dateBeforeLastWeek = `${yyyy}-${mm}-${dd}`;
+
+    console.log(dateBeforeLastWeek);
+    return dateBeforeLastWeek;
+}
+// }
+async function LeagueOnClick(leagueId :number, countryId: number){
+  // setLive
+  // const response = await fetch(
+  //   `https://apiv2.allsportsapi.com/football/?met=Livescore&APIkey=${apiKey}&LeagueId=${leagueId}`
+  // ).then((response) => response.json());
+  //   return console.log(response.result.leagueId);
+    
+  // return SetLiveGame(response.result); 
+const yesterday = getYesterdayDate();
+const dateBeforeWeek = getDateBeforeWeek();
   const response = await fetch(
-    `https://apiv2.allsportsapi.com/football/?met=Fixtures&APIkey=${apiKey}&from=2021-05-18&to=2021-05-18&LeagueId=${leagueId}`
-  ).then((response) => response.json());
-  alert(leagueId)
+    // `https://apiv2.allsportsapi.com/football/?met=Fixtures&APIkey=${apiKey}&from=2021-05-17&to=2021-05-18&countryid=${leagueId}`
+    `https://apiv2.allsportsapi.com/football/?met=Fixtures&APIkey=${apiKey}&from=${dateBeforeWeek}&to=${yesterday}&countryId=${countryId}`
+  ).then((response) => response.json())
+  const filterGames = response.result.filter((team: any) => team.league_key ===  leagueId)
+  return SetLastGame(filterGames); 
+  // alert(leagueId)
 }
   
 
-function getScorers({game}: {game:LiveScore}) {
+function getScorers(game:any) {
    let home_scorers = []
    let away_scorers = []
    for(let i = 0; i < game.goalscorers.length; i++){
@@ -142,19 +195,19 @@ function getScorers({game}: {game:LiveScore}) {
     return (
         <div className="LiveSection">
           <div className="LeagueDiv">
-                {Leagues.map((league) => <League key={league.id} name={league.name} onclick={() => LeagueOnClick(league.id)} />)}
+                {Leagues.map((league) => <League key={league.id} name={league.name} onclick={() => LeagueOnClick(league.id, league.countryId)} />)}
             </div>
           <div className="containers">
+              <h3 className="games-header">Live Games</h3>
             <div id="live-games-container">
-              <h1>Live Games</h1>
                 {liveGame.map((item) => {
-                    return <Card key={item.event_home_team} onclick={()=> { alert(item.event_status) }} event_away_team={item.event_away_team} away_team_logo={item.away_team_logo} event_status={item.event_status} event_final_result={item.event_final_result} event_home_team={item.event_home_team} home_team_logo={item.home_team_logo}/>
+                  return <Card key={item.event_key} onclick={() => getScorers(item)} event_away_team={item.event_away_team} away_team_logo={item.away_team_logo} event_status={item.event_status} event_final_result={item.event_final_result} event_home_team={item.event_home_team} home_team_logo={item.home_team_logo}/>
                 })}
             </div>
+              <h3 className="games-header">Last Games</h3>
             <div id="live-games-container-last-game">
-              <h1>Last Games</h1>
                 {lastGame.map((item) => {
-                    return <CardLastGame key={item.home_scorer} onclick={()=> { alert(item.event_status) }} event_away_team={item.event_away_team} away_team_logo={item.away_team_logo} event_status={item.event_status} event_final_result={item.event_final_result} event_home_team={item.event_home_team} home_team_logo={item.home_team_logo}/>
+                    return <CardLastGame key={item.event_key} onclick={()=> { alert(item.event_status) }} event_away_team={item.event_away_team} away_team_logo={item.away_team_logo} event_status={item.event_status} event_final_result={item.event_final_result} event_home_team={item.event_home_team} home_team_logo={item.home_team_logo}/>
                 })}
             </div>
           </div>
