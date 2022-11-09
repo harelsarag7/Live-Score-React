@@ -2,6 +2,38 @@ import { useEffect, useState } from "react";
 import "./LiveSection.css";
 import Card, { CardLiveGame, LiveScore } from './Card/Card';
 import CardLastGame from "./CardLastGame/CardLastGame";
+import League from "../League/League";
+
+const Leagues = [
+  {
+      name: 'Champion League',
+      id: 2
+  },
+  {
+      name: 'Premier Leauge',
+      id: 152
+  },
+  {
+      name: 'La Liga',
+      id: 302
+  },
+  {
+      name: 'BundesLiga',
+      id: 56
+  },
+  {
+      name: 'Serie A',
+      id: 207
+  },
+  {
+      name: 'Israel League',
+      id: 202
+  },
+  {
+      name: 'World Cup',
+      id: 28
+  },
+]
 
 function LiveSection(): JSX.Element {
 const [liveGame, SetLiveGame] = useState<CardLiveGame[]>([])
@@ -22,6 +54,19 @@ async function getApiDataLastGame() {
     
   return SetLastGame(response.result); 
   }
+// async function getApiDataLeagues() {
+//   let leagueId;
+//   // &leagueId=${leagueId}
+//   const response = await fetch(
+//     `https://apiv2.allsportsapi.com/football/?met=Leagues&APIkey=${apiKey}`
+//   ).then((response) => response.json());
+//     console.log(response);
+    
+//   }
+
+
+
+
 
 
 
@@ -54,10 +99,16 @@ async function getApiDataLastGame() {
 
 // country id 62 = israel
 // country id 6 = spain
+
+async function LeagueOnClick(leagueId :number){
+  const response = await fetch(
+    `https://apiv2.allsportsapi.com/football/?met=Fixtures&APIkey=${apiKey}&from=2021-05-18&to=2021-05-18&LeagueId=${leagueId}`
+  ).then((response) => response.json());
+  alert(leagueId)
+}
   
 
 function getScorers({game}: {game:LiveScore}) {
-   // alert("hey")
    let home_scorers = []
    let away_scorers = []
    for(let i = 0; i < game.goalscorers.length; i++){
@@ -82,14 +133,18 @@ function getScorers({game}: {game:LiveScore}) {
 
   useEffect(() => {
     getApiDataLiveGame()
-    getApiDataLastGame()
-    console.log(liveGame);
+    getApiDataLastGame()   
+    // console.log(liveGame);
   }, [])
 
   
     
     return (
         <div className="LiveSection">
+          <div className="LeagueDiv">
+                {Leagues.map((league) => <League key={league.id} name={league.name} onclick={() => LeagueOnClick(league.id)} />)}
+            </div>
+          <div className="containers">
             <div id="live-games-container">
               <h1>Live Games</h1>
                 {liveGame.map((item) => {
@@ -102,7 +157,9 @@ function getScorers({game}: {game:LiveScore}) {
                     return <CardLastGame key={item.home_scorer} onclick={()=> { alert(item.event_status) }} event_away_team={item.event_away_team} away_team_logo={item.away_team_logo} event_status={item.event_status} event_final_result={item.event_final_result} event_home_team={item.event_home_team} home_team_logo={item.home_team_logo}/>
                 })}
             </div>
+          </div>
         </div>
+        
     );
 }
 
