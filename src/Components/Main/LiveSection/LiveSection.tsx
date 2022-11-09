@@ -1,17 +1,26 @@
 import { useEffect, useState } from "react";
 import "./LiveSection.css";
-import Card, { LiveScore } from './Card/Card';
+import Card, { CardLiveGame, LiveScore } from './Card/Card';
+import CardLastGame from "./CardLastGame/CardLastGame";
 
 function LiveSection(): JSX.Element {
-const [games, SetGames] = useState<LiveScore[]>([])
+const [liveGame, SetLiveGame] = useState<CardLiveGame[]>([])
+const [lastGame, SetLastGame] = useState<CardLiveGame[]>([])
 const apiKey = "581fb55ff92d00056049811d83a45652c46ae3ff89ec0166c24366d92d25a22c"
 
-async function getApiData() {
+async function getApiDataLiveGame() {
   const response = await fetch(
     `https://apiv2.allsportsapi.com/football/?met=Livescore&APIkey=${apiKey}`
   ).then((response) => response.json());
-
-  return SetGames(response.result); 
+    
+  return SetLiveGame(response.result); 
+  }
+async function getApiDataLastGame() {
+  const response = await fetch(
+    `https://apiv2.allsportsapi.com/football/?met=Fixtures&APIkey=${apiKey}&from=2021-05-18&to=2021-05-18`
+  ).then((response) => response.json());
+    
+  return SetLastGame(response.result); 
   }
 
 
@@ -47,7 +56,7 @@ async function getApiData() {
 // country id 6 = spain
   
 
-function getScorers(game: LiveScore) {
+function getScorers({game}: {game:LiveScore}) {
    // alert("hey")
    let home_scorers = []
    let away_scorers = []
@@ -72,8 +81,9 @@ function getScorers(game: LiveScore) {
 }
 
   useEffect(() => {
-    getApiData()
-    console.log(games);
+    getApiDataLiveGame()
+    getApiDataLastGame()
+    console.log(liveGame);
   }, [])
 
   
@@ -81,8 +91,15 @@ function getScorers(game: LiveScore) {
     return (
         <div className="LiveSection">
             <div id="live-games-container">
-                {games.map((item) => {
-                    return <Card onclick={() => alert(item)} key={item.event_key} game={item}/>
+              <h1>Live Games</h1>
+                {liveGame.map((item) => {
+                    return <Card key={item.event_home_team} onclick={()=> { alert(item.event_status) }} event_away_team={item.event_away_team} away_team_logo={item.away_team_logo} event_status={item.event_status} event_final_result={item.event_final_result} event_home_team={item.event_home_team} home_team_logo={item.home_team_logo}/>
+                })}
+            </div>
+            <div id="live-games-container-last-game">
+              <h1>Last Games</h1>
+                {lastGame.map((item) => {
+                    return <CardLastGame key={item.home_scorer} onclick={()=> { alert(item.event_status) }} event_away_team={item.event_away_team} away_team_logo={item.away_team_logo} event_status={item.event_status} event_final_result={item.event_final_result} event_home_team={item.event_home_team} home_team_logo={item.home_team_logo}/>
                 })}
             </div>
         </div>

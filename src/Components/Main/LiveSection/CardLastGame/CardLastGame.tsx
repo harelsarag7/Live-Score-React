@@ -1,12 +1,5 @@
-import "./Card.css";
-// import React, { useEffect, useState } from "react";
-// import ReactDOM from "react-dom";
-// interface Live {
-//   result?: any,
-//   event_key?: number,
-//   event_home_team?: string
-// }
-// declare module namespace {
+import "./CardLastGame.css"
+
 interface Goalscorer {
    time: string;
    home_scorer: string;
@@ -100,32 +93,10 @@ export interface LiveScore {
    statistics: Statistic[];
    getScorers: void;
 }
-// function getScorers(game: LiveScore) {
-//    // alert("hey")
-//    let home_scorers = []
-//    let away_scorers = []
-//    for(let i = 0; i < game.goalscorers.length; i++){
-//      if(game.goalscorers[i].home_scorer){
-//        home_scorers.push(game.goalscorers[i].home_scorer? game.goalscorers[i].home_scorer : <></> )
-//      } else if(game.goalscorers[i].away_scorer){
- 
-//        away_scorers.push(game.goalscorers[i].away_scorer? game.goalscorers[i].away_scorer : <></> )
-//      } 
-//    }
- 
-//      if(home_scorers.length === 0){
-//        home_scorers.push("No Goals")
-//      }
-//      if(away_scorers.length === 0){
-//        away_scorers.push("No Goals")
-//      } 
-   
-
-//    return alert(`${game.event_home_team}: ${home_scorers} \n ${game.event_away_team}: ${away_scorers}  `)
-// }
 
 
-export interface CardLiveGame{
+
+export interface CardLasteGame{
    event_home_team:string,
    home_team_logo: string;
    event_final_result: string;
@@ -139,11 +110,10 @@ export interface CardLiveGame{
 }
 
 
-// { game }: { game: LiveScore }
-function Card({ event_home_team, home_team_logo, event_final_result, event_away_team, event_status, away_team_logo, onclick }:CardLiveGame): JSX.Element {
+function CardLastGame({ event_home_team, home_team_logo, event_final_result, event_away_team, event_status, away_team_logo, onclick }:CardLasteGame): JSX.Element {
 
    return (
-      <div className="Card">
+      <div className="CardLastGame">
          {/* 
        <ul>
          <li>{game.event_home_team}</li>
@@ -182,7 +152,7 @@ function Card({ event_home_team, home_team_logo, event_final_result, event_away_
 
 
 
-export default Card;
+export default CardLastGame;
 
 
 
