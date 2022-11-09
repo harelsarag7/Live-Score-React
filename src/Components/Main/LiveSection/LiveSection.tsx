@@ -143,21 +143,21 @@ function getDateBeforeWeek() {
 // }
 async function LeagueOnClick(leagueId :number, countryId: number){
   // setLive
-  // const response = await fetch(
-  //   `https://apiv2.allsportsapi.com/football/?met=Livescore&APIkey=${apiKey}&LeagueId=${leagueId}`
-  // ).then((response) => response.json());
-  //   return console.log(response.result.leagueId);
-    
-  // return SetLiveGame(response.result); 
+  const liveGames = await fetch(
+    `https://apiv2.allsportsapi.com/football/?met=Livescore&APIkey=${apiKey}}&countryId=${countryId}`
+  ).then((liveGames) => liveGames.json());
+    // return console.log(liveGames.result.leagueId);
+  const filterLiveGames = liveGames.result.filter((team: any) => team.league_key ===  leagueId)
+   SetLiveGame(filterLiveGames); 
+
+
 const yesterday = getYesterdayDate();
 const dateBeforeWeek = getDateBeforeWeek();
   const response = await fetch(
-    // `https://apiv2.allsportsapi.com/football/?met=Fixtures&APIkey=${apiKey}&from=2021-05-17&to=2021-05-18&countryid=${leagueId}`
     `https://apiv2.allsportsapi.com/football/?met=Fixtures&APIkey=${apiKey}&from=${dateBeforeWeek}&to=${yesterday}&countryId=${countryId}`
   ).then((response) => response.json())
   const filterGames = response.result.filter((team: any) => team.league_key ===  leagueId)
-  return SetLastGame(filterGames); 
-  // alert(leagueId)
+   SetLastGame(filterGames); 
 }
   
 
@@ -202,7 +202,7 @@ function getScorers(game:any) {
             <div id="live-games-container">
                 {liveGame.map((item) => {
                   return <Card key={item.event_key} onclick={() => getScorers(item)} event_away_team={item.event_away_team} away_team_logo={item.away_team_logo} event_status={item.event_status} event_final_result={item.event_final_result} event_home_team={item.event_home_team} home_team_logo={item.home_team_logo}/>
-                })}
+                })} 
             </div>
               <h3 className="games-header">Last Games</h3>
             <div id="live-games-container-last-game">
