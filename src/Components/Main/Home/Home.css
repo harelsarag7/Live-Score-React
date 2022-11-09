@@ -1,18 +1,8 @@
 .Home{
     display: flex;
+    width: 100%;
 }
 
 .LiveSectionDiv{
-    width: 85%;
-}
-
-.LeagueDiv{
-    max-height: 30%;
-    width: 15%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #3A8891;
-    
+    width: 100%;
 }

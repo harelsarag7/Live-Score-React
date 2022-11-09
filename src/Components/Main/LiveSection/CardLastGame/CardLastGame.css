@@ -1,4 +1,4 @@
-.Card {
+.CardLastGame {
     color: white;
     background-image: url("/src/cardBackgroundImage.jpg");
     width: 350px;
@@ -22,13 +22,14 @@
 .team {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
+    font-size: 15px;
 }
 
 .team-logo {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
 }
 
 .score-container {
@@ -53,8 +54,4 @@
 .icons img {
     margin: 0 25px;
     width: 12%;
-}
-
-.home-team-image{
-    width: 100px;
 }

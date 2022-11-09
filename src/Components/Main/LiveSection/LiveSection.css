@@ -1,4 +1,52 @@
+.LiveSection{
+    width: 100%;
+}
+
+
+.LeagueDiv{
+    max-height: 10%;
+    width: 100%;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    background-color: #3A8891;
+    
+}
+
+
 #live-games-container {
+    display: flex ;
+    overflow: auto ;
+    cursor: pointer;
+    position: relative;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    transition: all 0.2s;
+    transform: scale(0.98);
+    cursor: grabbing;
+}
+
+#live-games-container::-webkit-scrollbar{
+    -webkit-box-shadow: inset 0 0 2px rgba(0,0,0,0.1);
+
+}
+
+#live-games-container::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #F5F5F5;
+}
+
+#live-games-container::-webkit-scrollbar-thumb
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.2);
+	background-color: white;
+}
+
+
+#live-games-container-last-game {
     display: flex ;
     overflow: auto ;
     /* padding: 10px ; */
@@ -15,3 +63,30 @@
     /* user-select: none; */
     cursor: grabbing;
 }
+
+
+#live-games-container-last-game::-webkit-scrollbar{
+    -webkit-box-shadow: inset 0 0 2px rgba(0,0,0,0.1);
+	/* border-radius: 10px; */
+	/* background-color: #F5F5F5; */
+}
+
+#live-games-container-last-game::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #F5F5F5;
+}
+
+#live-games-container-last-game::-webkit-scrollbar-thumb
+{
+	/* border-radius: 10px; */
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.2);
+	background-color: white;
+}
+
+/* .LeagueDiv{
+    display: flex;
+    width: 100%;
+} */
+
+
