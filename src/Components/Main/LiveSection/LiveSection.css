@@ -16,6 +16,7 @@
 
 
 #live-games-container {
+    height: 250px;
     display: flex ;
     overflow: auto ;
     cursor: pointer;
@@ -47,6 +48,7 @@
 
 
 #live-games-container-last-game {
+    height: 250px;
     display: flex ;
     overflow: auto ;
     /* padding: 10px ; */

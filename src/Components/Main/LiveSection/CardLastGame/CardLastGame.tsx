@@ -1,3 +1,4 @@
+import { cardFunctions } from "../../../../functions/CardFunctions";
 import "./CardLastGame.css"
 
 interface Goalscorer {
@@ -56,6 +57,7 @@ interface Statistic {
    away: string;
 }
 export interface LiveScore {
+
    event_key: number;
    event_date: string;
    event_time: string;
@@ -91,26 +93,11 @@ export interface LiveScore {
    cards: Card[];
    lineups: Lineups;
    statistics: Statistic[];
-   getScorers: void;
+   onclick:()=>void
 }
 
 
-
-export interface CardLasteGame{
-   event_home_team:string,
-   home_team_logo: string;
-   event_final_result: string;
-   event_away_team: string;
-   event_status: string;
-   away_team_logo: string;
-   home_scorer?:string | undefined
-   away_scorer?:string | undefined
-   onclick:()=> void
-
-}
-
-
-function CardLastGame({ event_home_team, home_team_logo, event_final_result, event_away_team, event_status, away_team_logo, onclick }:CardLasteGame): JSX.Element {
+function CardLastGame({ game }:{game:LiveScore}): JSX.Element {
 
    return (
       <div className="CardLastGame">
@@ -124,23 +111,23 @@ function CardLastGame({ event_home_team, home_team_logo, event_final_result, eve
          <div className="info-container">
 
             <div className="home-team-image team">
-               <p>{event_home_team}</p>
-               <img className="team-logo" src={home_team_logo} alt="" />
+               <p>{game.event_home_team}</p>
+               <img className="team-logo" src={game.home_team_logo} alt="" />
             </div>
             <div className="score-container">
                <p></p><p></p>
                VS
-               <span className="score-live" >{event_final_result}</span>
-               <span>{event_status}'</span>
+               <span className="score-live" >{game.event_final_result}</span>
+               <span>{game.event_status}'</span>
             </div>
             <div className="home-team-image team">
-               <p>{event_away_team}</p>
-               <img className="team-logo" src={away_team_logo} alt="" />
+               <p>{game.event_away_team}</p>
+               <img className="team-logo" src={game.away_team_logo} alt="" />
             </div>
          </div>
 
          <div className="icons">
-            <img className="scorers-icon" src="https://i.ibb.co/yp992z3/football.png" onClick={onclick} alt="" width={35} />
+            <img className="scorers-icon" src="https://i.ibb.co/yp992z3/football.png" onClick={() => cardFunctions.getScorers(game)} alt="" width={35} />
             <img className="statistic-icon" src="https://i.ibb.co/xfFn4fq/pie-chart.png" alt="" width={35} />
             <img className="cards-icon" src="https://i.ibb.co/74K67wD/flash-cards.png" alt="" width={35} />
          </div>
