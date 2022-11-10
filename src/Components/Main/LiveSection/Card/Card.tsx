@@ -1,12 +1,9 @@
+import { cardFunctions } from "../../../../functions/CardFunctions";
 import "./Card.css";
-// import React, { useEffect, useState } from "react";
-// import ReactDOM from "react-dom";
-// interface Live {
-//   result?: any,
-//   event_key?: number,
-//   event_home_team?: string
-// }
-// declare module namespace {
+
+
+
+
 interface Goalscorer {
    time: string;
    home_scorer: string;
@@ -98,106 +95,36 @@ export interface LiveScore {
    cards: Card[];
    lineups: Lineups;
    statistics: Statistic[];
-   getScorers: void;
-}
-// function getScorers(game: LiveScore) {
-//    // alert("hey")
-//    let home_scorers = []
-//    let away_scorers = []
-//    for(let i = 0; i < game.goalscorers.length; i++){
-//      if(game.goalscorers[i].home_scorer){
-//        home_scorers.push(game.goalscorers[i].home_scorer? game.goalscorers[i].home_scorer : <></> )
-//      } else if(game.goalscorers[i].away_scorer){
- 
-//        away_scorers.push(game.goalscorers[i].away_scorer? game.goalscorers[i].away_scorer : <></> )
-//      } 
-//    }
- 
-//      if(home_scorers.length === 0){
-//        home_scorers.push("No Goals")
-//      }
-//      if(away_scorers.length === 0){
-//        away_scorers.push("No Goals")
-//      } 
-   
-
-//    return alert(`${game.event_home_team}: ${home_scorers} \n ${game.event_away_team}: ${away_scorers}  `)
-// }
-
-
-function getScorers({game}: {game:LiveScore}) {
-   // alert("hey")
-   let home_scorers = []
-   let away_scorers = []
-   for(let i = 0; i < game.goalscorers.length; i++){
-     if(game.goalscorers[i].home_scorer){
-       home_scorers.push(game.goalscorers[i].home_scorer? game.goalscorers[i].home_scorer : <></> )
-     } else if(game.goalscorers[i].away_scorer){
- 
-       away_scorers.push(game.goalscorers[i].away_scorer? game.goalscorers[i].away_scorer : <></> )
-     } 
-   }
- 
-     if(home_scorers.length === 0){
-       home_scorers.push("No Goals")
-     }
-     if(away_scorers.length === 0){
-       away_scorers.push("No Goals")
-     } 
-   
-
-   return alert(`${game.event_home_team}: ${home_scorers} \n ${game.event_away_team}: ${away_scorers}  `)
-}
-
-
-
-export interface CardLiveGame{
-   event_home_team:string,
-   home_team_logo: string;
-   event_final_result: string;
-   event_away_team: string;
-   event_status: string;
-   away_team_logo: string;
-   home_scorer?:string | undefined
-   away_scorer?:string | undefined;
-   event_key?: number
-   onclick:()=> void
+   onclick: () => void
 
 }
 
 
-// { game }: { game: LiveScore }
-function Card({ event_home_team, home_team_logo, event_final_result, event_away_team, event_status, away_team_logo, onclick }:CardLiveGame): JSX.Element {
+
+function Card({ game }: { game: LiveScore }): JSX.Element {
 
    return (
       <div className="Card">
-         {/* 
-       <ul>
-         <li>{game.event_home_team}</li>
-         <li>{game.event_away_team}</li>
-       </ul> */}
-
-
          <div className="info-container">
 
             <div className="home-team-image team">
-               <p>{event_home_team}</p>
-               <img className="team-logo" src={home_team_logo} alt="" />
+               <p>{game.event_home_team}</p>
+               <img className="team-logo" src={game.home_team_logo} alt="" />
             </div>
             <div className="score-container">
                <p></p><p></p>
                VS
-               <span className="score-live" >{event_final_result}</span>
-               <span>{event_status}'</span>
+               <span className="score-live" >{game.event_final_result}</span>
+               <span>{game.event_status}'</span>
             </div>
             <div className="home-team-image team">
-               <p>{event_away_team}</p>
-               <img className="team-logo" src={away_team_logo} alt="" />
+               <p>{game.event_away_team}</p>
+               <img className="team-logo" src={game.away_team_logo} alt="" />
             </div>
          </div>
 
          <div className="icons">
-            <img className="scorers-icon" src="https://i.ibb.co/yp992z3/football.png" onClick={onclick} alt="" width={35} />
+            <img className="scorers-icon" src="https://i.ibb.co/yp992z3/football.png" onClick={() => cardFunctions.getScorers(game)} alt="" width={35} />
             <img className="statistic-icon" src="https://i.ibb.co/xfFn4fq/pie-chart.png" alt="" width={35} />
             <img className="cards-icon" src="https://i.ibb.co/74K67wD/flash-cards.png" alt="" width={35} />
          </div>
