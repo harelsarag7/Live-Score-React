@@ -29,10 +29,10 @@
     cursor: grabbing;
 }
 
-#live-games-container::-webkit-scrollbar{
+/* #live-games-container::-webkit-scrollbar{
     -webkit-box-shadow: inset 0 0 2px rgba(0,0,0,0.1);
 
-}
+} */
 
 #live-games-container::-webkit-scrollbar
 {
@@ -42,7 +42,7 @@
 
 #live-games-container::-webkit-scrollbar-thumb
 {
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.2);
+	/* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.2); */
 	background-color: white;
 }
 
@@ -66,12 +66,12 @@
     cursor: grabbing;
 }
 
-
+/* 
 #live-games-container-last-game::-webkit-scrollbar{
-    -webkit-box-shadow: inset 0 0 2px rgba(0,0,0,0.1);
+    /* -webkit-box-shadow: inset 0 0 2px rgba(0,0,0,0.1); */
 	/* border-radius: 10px; */
 	/* background-color: #F5F5F5; */
-}
+/* } */
 
 #live-games-container-last-game::-webkit-scrollbar
 {
@@ -82,7 +82,7 @@
 #live-games-container-last-game::-webkit-scrollbar-thumb
 {
 	/* border-radius: 10px; */
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.2);
+	/* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.2); */
 	background-color: white;
 }
 
