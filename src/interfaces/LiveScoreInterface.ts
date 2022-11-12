@@ -95,3 +95,44 @@ export interface LiveScore {
    statistics: Statistic[];
    onclick:()=>void
 }
+
+
+
+
+
+
+
+
+
+// Spesific Team interface:
+
+     interface Player {
+        player_key: any;
+        player_name: string;
+        player_number: string;
+        player_country?: any;
+        player_type: string;
+        player_age: string;
+        player_match_played: string;
+        player_goals: string;
+        player_yellow_cards: string;
+        player_red_cards: string;
+        player_image: string;
+    }
+
+     interface Coach {
+        coach_name: string;
+        coach_country?: any;
+        coach_age?: any;
+    }
+
+    export interface TeamInterface {
+        team_key: number;
+        team_name: string;
+        team_logo: string;
+        players: Player[];
+        coaches: Coach[];
+    }
+
+  
+

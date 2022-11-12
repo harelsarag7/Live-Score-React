@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import "./Footer.css";
 
 function Footer(): JSX.Element {
@@ -10,10 +11,11 @@ function Footer(): JSX.Element {
         <div className="footer-col">
           <h4>Live Score</h4>
           <ul>
-            <li><a href="#">about us</a></li>
-            <li><a href="#">our services</a></li>
-            <li><a href="#">privacy policy</a></li>
-            <li><a href="#">affiliate program</a></li>
+          <li><NavLink to={'/Home'}>Home</NavLink></li>
+          <li> <NavLink to={'/News'}>News</NavLink></li>
+          <li> <NavLink to={'/Highlights'}>Highlights</NavLink></li>
+          <li> <NavLink to={'/Table'}>Table</NavLink></li>
+          <li> <NavLink to={'/'}>Build Tournament </NavLink></li>
           </ul>
         </div>
         <div className="footer-col">

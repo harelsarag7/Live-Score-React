@@ -1,0 +1,68 @@
+.Page_404 {
+  text-align: center;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Page_404 #img {
+  position:absolute;
+  left: 0;
+  background-image: url("./2-28928_soccer-player-png-transparent-png__1_-removebg-preview.png")  ;
+  width:30vw;
+  background-size:cover;
+  height: 300px;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+.Page_404 h1 {
+  font-size: 120px;
+  color: rgb(13, 13, 51);
+  line-height: 20%;
+}
+
+.Page_404 a {  
+  color: rgb(13, 13, 51);
+  font-weight: 500;
+  text-decoration: none;
+  outline: 2px solid lightgreen;
+  padding: 15px 30px;
+  border-radius: 30px;
+  position: relative;
+  top: 30px;
+}
+
+.Page_404 a:hover {
+  background-color: lightgreen;
+}
+
+#notfound {
+  position: relative;
+  bottom: 10%;
+}
+
+@media only screen and (max-width: 800px) {
+  .Page_404 h1{
+    font-size: 80px;
+  }
+  .Page_404 #img {
+    position:fixed;
+    width: 50vw;
+    left: 0px;
+  }
+}
+@media only screen and (max-width: 500px) {
+
+  .Page_404 h1{
+    font-size: 60px;
+  }
+  .Page_404 h2{
+    font-size: 20px;
+  }
+  .Page_404 #img {
+    position:fixed;
+    width: 60vw;
+    left: 0px;
+  }
+}

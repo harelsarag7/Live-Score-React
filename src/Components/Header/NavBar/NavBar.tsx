@@ -9,6 +9,8 @@ function NavBar(){
             <NavLink to={'/News'}>News</NavLink>
             <NavLink to={'/Highlights'}>Highlights</NavLink>
             <NavLink to={'/Table'}>Table</NavLink>
+            <NavLink to={'/'}>Build Tournament </NavLink>
+
         </div>
     )
 }
