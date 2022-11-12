@@ -21,8 +21,27 @@ useEffect(() => {
 
     return (
         <div className="TeamPage">
+                <div className="team-container">
 
-                <p>hey:</p> {team?.team_name}
+                    <h1>{team?.team_name}</h1> 
+
+                    <img id="team-logo" src={team?.team_logo} alt="" />
+                <div className="layout">
+
+                  <div>
+                    <div> Live Match:</div>
+                    <div> Featured Match:</div>
+                  </div>  
+                 
+                 
+                  <div>
+                    <div> Last Games:</div>
+                    <div> Table: teamID is in color </div>
+                  </div>
+
+                </div>
+
+                </div>
 
             
         </div>
