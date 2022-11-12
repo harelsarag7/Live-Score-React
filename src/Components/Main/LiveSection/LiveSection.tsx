@@ -5,6 +5,11 @@ import CardLastGame from "./CardLastGame/CardLastGame";
 import League from "../League/League";
 import { cardFunctions } from "../../../functions/CardFunctions";
 import { LiveScore } from "../../../interfaces/LiveScoreInterface";
+import { config } from "../../../config/config";
+import CardLoader from "./CardLoader/CardLoader";
+import { loaderCardsArray } from "../../../arrays/LoaderCardsArray";
+import CardLastGameLoader from "./CardLastGameLoader/CardLastGameLoader";
+
 
 
 const Leagues = [
@@ -51,35 +56,56 @@ const Leagues = [
 ]
 
 function LiveSection(): JSX.Element {
-const [liveGame, SetLiveGame] = useState<LiveScore[]>([])
-const [lastGame, SetLastGame] = useState<LiveScore[]>([])
+const [liveGame, SetLiveGame] = useState<LiveScore[] | undefined>(undefined);
+const [lastGame, SetLastGame] = useState<LiveScore[] | undefined>(undefined);
 
   useEffect(() => {
      cardFunctions.getApiDataLiveGame().then(liveGames => SetLiveGame(liveGames));
     cardFunctions.getApiDataLastGame().then(lastGames => SetLastGame(lastGames));   
   }, [])
 
-  
+
     
     return (
         <div className="LiveSection">
           <div className="LeagueDiv">
-                {Leagues.map((league) => <League key={league.id} name={league.name} onclick={() => cardFunctions.LeagueOnClick(league.id, league.countryId).then(res => {
+                {Leagues.map((league) => <League key={league.id} name={league.name} loader={() => {
+                  SetLiveGame(undefined)
+                  SetLastGame(undefined)}}
+                   onclick={() => cardFunctions.LeagueOnClick(league.id, league.countryId).then(res => {
                   SetLiveGame(res[0])
                   SetLastGame(res[1])
                   })}  />)}
             </div>
           <div className="containers">
+
+
               <h3 className="games-header">Live Games</h3>
             <div id="live-games-container">
-                {liveGame.length? liveGame.map((item) => 
+            {liveGame === undefined
+                ?   loaderCardsArray.loaderCards.map((item) => 
+                <CardLoader key={item.event_key}  game={item}  />
+             )
+                : liveGame.length === 0
+                    ? 'No Live Games'
+                    :
+                liveGame.map((item) => 
                    <Card key={item.event_key}  game={item} />
-                ): "No live games"} 
+                )}
             </div>
+
+
               <h3 className="games-header">Last Games</h3>
-            <div id="live-games-container-last-game">
-                {lastGame.map((item) => 
-                     <CardLastGame key={item.event_key} game={item}/>
+              <div id="live-games-container-last-game">
+            {lastGame === undefined
+                ?   loaderCardsArray.loaderCards.map((item) => 
+                <CardLastGameLoader key={item.event_key}  game={item}  />
+             )
+                : lastGame.length === 0
+                    ? 'No Live Games'
+                    :
+                lastGame.map((item) => 
+                   <CardLastGame key={item.event_key}  game={item} />
                 )}
             </div>
           </div>

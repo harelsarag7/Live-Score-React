@@ -19,16 +19,24 @@
     margin: 20px;
 }
 
-.team {
+.Card .team {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+.Card .team-logo {
+    width: 60px;
+    height: 60px;
+    position: relative;
+    top: 0px !important;
+    /* transition: all 0.3s; */
+    transition: top 0.3s ease 0s;
 
-.team-logo {
-    width: 80px;
-    height: 80px;
+}
+
+.Card .team-logo:hover {
+    top: -5px !important;
 }
 
 .score-container {
