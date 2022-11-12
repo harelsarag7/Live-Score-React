@@ -57,10 +57,20 @@
     align-items: center;
     /* top: 20px; */
 }
-
+.icons {
+    position: relative;
+}
 .icons img {
     margin: 0 25px;
     width: 12%;
+    position: relative;
+    top: 0;
+}
+.icons img:hover {
+    cursor: pointer;
+    transition: top 0.2s ease 0s;
+    /* position: absolute; */
+    top: -3px;
 }
 
 .home-team-image{
