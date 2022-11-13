@@ -1,6 +1,10 @@
-import { cardFunctions } from '../../../functions/CardFunctions';
+import { tab } from '@testing-library/user-event/dist/tab';
+import { useEffect, useState } from 'react';
+import { TableFunctionAll } from '../../../functions/TableFunctions';
+import { standingInterface } from '../../../interfaces/TableInterface';
 import League from '../League/League';
 import './Table.css';
+import TableStracture from './TableStracture/TableStracture';
 
 
 const Leagues = [
@@ -46,12 +50,31 @@ const Leagues = [
     },
 ]
 
-function Table() {
 
+function Table() {
+    const [table, setTable] = useState<standingInterface[]>([])
+
+    useEffect(() => {
+        let leagueId = 202;
+        TableFunctionAll.getStandingByLeague(leagueId).then(res=> setTable(res))
+    }, [])
     return (
         <div className='Table'>
             <div className="LeagueDiv">
-                {Leagues.map((league) => <League key={league.id} name={league.name}/>)}
+                {Leagues.map((league) => <League key={league.id} name={league.name} onclick={() => TableFunctionAll.getStandingByLeague(league.id).then((res) => setTable(res))} />)}
+            </div>
+            <div className='TableDiv'>
+                <table>
+                    <tr>
+                    <th>Team</th>
+                    <th>Place</th>
+                    <th>Points</th>
+                    <th>Win</th>
+                    <th>Lose</th>
+                    </tr>
+
+                    {table?.map((team)=> <TableStracture key={team.team_key} standing={team}/>)}
+                </table>
             </div>
         </div>
     )
