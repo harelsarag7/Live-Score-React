@@ -1,5 +1,6 @@
 import { tab } from '@testing-library/user-event/dist/tab';
 import { useEffect, useState } from 'react';
+import ScrollToTop from '../../../functions/scrollUpFunction';
 import { TableFunctionAll } from '../../../functions/TableFunctions';
 import { standingInterface } from '../../../interfaces/TableInterface';
 import League from '../League/League';
@@ -56,7 +57,8 @@ function Table() {
 
     useEffect(() => {
         let leagueId = 202;
-        TableFunctionAll.getStandingByLeague(leagueId).then(res=> setTable(res))
+        TableFunctionAll.getStandingByLeague(leagueId).then(res=> setTable(res));
+        ScrollToTop();
     }, [])
     return (
         <div className='Table'>
