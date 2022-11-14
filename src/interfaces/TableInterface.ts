@@ -17,7 +17,7 @@ export interface standingInterface {
     standing_updated: string;
     fk_stage_key: number;
     stage_name: string;
-    getLogo: () => void;
+    logo: string;
 }
 
 export interface Home {

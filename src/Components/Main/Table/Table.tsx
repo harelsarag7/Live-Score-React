@@ -2,6 +2,7 @@ import { tab } from '@testing-library/user-event/dist/tab';
 import { useEffect, useState } from 'react';
 import ScrollToTop from '../../../functions/scrollUpFunction';
 import { TableFunctionAll } from '../../../functions/TableFunctions';
+import { teamFucntions } from '../../../functions/TeamsFunctions';
 import { standingInterface } from '../../../interfaces/TableInterface';
 import League from '../League/League';
 import './Table.css';
@@ -54,22 +55,26 @@ const Leagues = [
 
 function Table() {
     const [table, setTable] = useState<standingInterface[]>([])
+    const [leagueId, setLeagueId] = useState(202);
 
     useEffect(() => {
-        let leagueId = 202;
-        TableFunctionAll.getStandingByLeague(leagueId).then(res=> setTable(res));
+        TableFunctionAll.getStandingByLeague(leagueId).then(res=> {
+            let promises = res.map(team => teamFucntions.getTeamLogo(team.team_key).then(img => team.logo = img));
+            Promise.all(promises).then(() => setTable(res));
+        });
         ScrollToTop();
-    }, [])
+    }, [leagueId])
     return (
         <div className='Table'>
             <div className="LeagueDiv">
-                {Leagues.map((league) => <League key={league.id} name={league.name} onclick={() => TableFunctionAll.getStandingByLeague(league.id).then((res) => setTable(res))} />)}
+                {Leagues.map((league) => <League key={league.id} name={league.name} onclick={() => setLeagueId(league.id) }/>)}
             </div>
             <div className='TableDiv'>
                 <table>
                     <tr>
-                    <th>Team</th>
+                    {/* <th>Team</th> */}
                     <th>Place</th>
+                    <th>Team</th>
                     <th>Points</th>
                     <th>Win</th>
                     <th>Lose</th>

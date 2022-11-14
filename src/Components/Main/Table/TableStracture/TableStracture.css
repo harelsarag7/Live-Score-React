@@ -12,11 +12,22 @@ table {
     padding: 8px;
     width: 200px;
   }
-  tr .rank {
-    width: 30px;
-    text-align: center;
+   .rank {
+    width: 10px ;
+    /* text-align: center; */
   }
   
   tr:nth-child(even) {
     background-color: #dddddd;
+  }
+
+  .TableStracture .team-logo {
+    width: 30px;
+    height: 30px;
+  }
+
+  .TableStracture .team-name-logo {
+    display: flex;
+    gap: 8px;
+    align-items: center;
   }
