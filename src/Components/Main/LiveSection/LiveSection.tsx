@@ -9,6 +9,7 @@ import { config } from "../../../config/config";
 import CardLoader from "./CardLoader/CardLoader";
 import { loaderCardsArray } from "../../../arrays/LoaderCardsArray";
 import CardLastGameLoader from "./CardLastGameLoader/CardLastGameLoader";
+import ScrollToTop from "../../../functions/scrollUpFunction";
 
 
 
@@ -62,6 +63,7 @@ function LiveSection(): JSX.Element {
   useEffect(() => {
     cardFunctions.getApiDataLiveGame().then(liveGames => SetLiveGame(liveGames));
     cardFunctions.getApiDataLastGame().then(lastGames => SetLastGame(lastGames));
+    ScrollToTop();
   }, [])
   
   return (
