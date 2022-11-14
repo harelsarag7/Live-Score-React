@@ -2,6 +2,7 @@ import { NavLink, Route, Routes } from "react-router-dom";
 import Page_404 from "../Page_404/Page_404";
 import Home from "./Home/Home";
 import "./Main.css";
+import Table from "./Table/Table";
 import TeamPage from "./TeamPage/TeamPage";
 
 function Main() {
@@ -13,7 +14,7 @@ function Main() {
                 <Route path="/Home" element={<Home />}>Home</Route>
                 <Route path="/News" element={<div>News</div>}>News</Route>
                 <Route path="/Highlights" element={<div>Highlights</div>}>Highlights</Route>
-                <Route path="/Table" element={<div>Table</div>}>Table</Route>
+                <Route path="/Table" element={<Table />}>Table</Route>
                 <Route path="/Team/:teamId" element={<TeamPage/>}>Team Page</Route>
                 <Route path="/*" element={<Page_404/>}>Table</Route>
             </Routes>

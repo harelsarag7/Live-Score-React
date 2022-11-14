@@ -27,6 +27,8 @@
     transition: all 0.2s;
     transform: scale(0.98);
     cursor: grabbing;
+    /* justify-content: center; */
+    align-items: center;
 }
 
 /* #live-games-container::-webkit-scrollbar{
@@ -73,4 +75,10 @@
     display: inline-block;
     padding-bottom: 10px;
     font-family: sans-serif;
+}
+
+.NoLiveGamesDiv{
+    background-color: #3A8891;
+    padding: 10px;
+    margin: auto;
 }

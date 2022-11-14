@@ -30,7 +30,7 @@ function Card({ game }: { game: LiveScore }): JSX.Element {
          <div className="icons">
             <img className="scorers-icon" src="https://i.ibb.co/yp992z3/football.png" onClick={() => cardFunctions.getScorers(game)} alt=""/>
             <img className="statistic-icon" src="https://i.ibb.co/xfFn4fq/pie-chart.png" alt=""/>
-            <img className="cards-icon" src="https://i.ibb.co/74K67wD/flash-cards.png" alt=""/>
+            <img className="cards-icon" src="https://i.ibb.co/74K67wD/flash-cards.png" onClick={()=> cardFunctions.getCards(game)} alt=""/>
          </div>
       </div>
    )
