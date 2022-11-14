@@ -64,7 +64,7 @@ const [lastGame, SetLastGame] = useState<LiveScore[] | undefined>(undefined);
     cardFunctions.getApiDataLastGame().then(lastGames => SetLastGame(lastGames));   
   }, [])
 
-
+// push
     
     return (
         <div className="LiveSection">
