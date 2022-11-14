@@ -63,9 +63,7 @@ function LiveSection(): JSX.Element {
     cardFunctions.getApiDataLiveGame().then(liveGames => SetLiveGame(liveGames));
     cardFunctions.getApiDataLastGame().then(lastGames => SetLastGame(lastGames));
   }, [])
-
-
-
+  
   return (
     <div className="LiveSection">
       <div className="LeagueDiv">
@@ -79,8 +77,6 @@ function LiveSection(): JSX.Element {
           })} />)}
       </div>
       <div className="containers">
-
-
         <h3 className="games-header">Live Games</h3>
         <div id="live-games-container">
           {liveGame === undefined
