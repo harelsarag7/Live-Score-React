@@ -29,13 +29,13 @@ useEffect(() => {
                     <img id="team-logo" src={team?.team_logo} alt="" />
                 <div className="layout">
 
-                  <div>
+                  <div className="LiveAndLastGamesPerTeam">
                     <div> Live Match:</div>
                     <div> Featured Match:</div>
                   </div>  
                  
                  
-                  <div>
+                  <div className="LiveAndLastGamesPerTeam">
                     <div> Last Games:</div>
                     <div> Table: teamID is in color </div>
                   </div>
