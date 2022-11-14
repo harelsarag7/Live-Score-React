@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+// import ScrollToTop from "../../../functions/scrollUpFunction";
 import { teamFucntions } from "../../../functions/TeamsFunctions";
 import { TeamInterface } from "../../../interfaces/LiveScoreInterface";
 import "./TeamPage.css";
@@ -11,7 +12,7 @@ const [team, setTeam] = useState<TeamInterface>();
 useEffect(() => {
     const numberTeamId = teamId["teamId"]
     
-    
+    // ScrollToTop();
     teamFucntions.getTeamData(numberTeamId? +numberTeamId: 0).then(res => {
         console.log(numberTeamId? +numberTeamId: 0);
         setTeam(res)
