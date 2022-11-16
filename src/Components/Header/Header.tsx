@@ -5,9 +5,6 @@ function Header(): JSX.Element {
     return (
         <div className="Header">
                 <div id="logo" ></div>
-            <div className="HeaderH1Div">
-                {/* <h1>Live Score</h1> */}
-            </div>
             <div className="HeaderLinksDiv">
                 <NavBar />
             </div>

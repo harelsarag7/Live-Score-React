@@ -1,6 +1,7 @@
 import League from '../League/League';
 import LiveSection from '../LiveSection/LiveSection';
 import './Home.css';
+import WelcomeComponent from './WelcomeComponent/WelcomeComponent';
 
 function Home() {
     // API call
@@ -9,6 +10,7 @@ function Home() {
     return (
         <div className='Home'>
             <div className='LiveSectionDiv'>
+                <WelcomeComponent/>
                 <LiveSection />
             </div>
         </div>

@@ -72,7 +72,7 @@ function LiveSection(): JSX.Element {
         SetLiveGame(res[0])
         SetLastGame(res[1])
     })
-    ScrollToTop();
+    // ScrollToTop();
   }, [leagueId])
 
   function ClickedLeague(league: number, country: number) {
@@ -88,6 +88,8 @@ function LiveSection(): JSX.Element {
   
   return (
     <div className="LiveSection">
+
+
       <div className="LeagueDiv">
         {Leagues.map((league) => <League key={league.id} name={league.name}
         onclick={() => ClickedLeague(league.id,league.countryId)}
