@@ -3,13 +3,13 @@ import './League.css';
 export interface LeagueProps{
     name:string
     onclick?:()=>void, 
-    loader?: ()=>void;
+    // loader?: ()=>void;
 }
 
-function League ({ onclick, loader, name }:LeagueProps){
+function League ({ onclick, name }:LeagueProps){
     return(
         <div className='League'>
-            <div className='leagueName' onMouseUp={loader} onClick={onclick}>
+            <div className='leagueName'  onClick={onclick}>
                 <p>{name}</p>
             </div>
         </div>

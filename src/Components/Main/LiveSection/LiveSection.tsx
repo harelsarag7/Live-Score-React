@@ -58,40 +58,39 @@ const Leagues = [
 function LiveSection(): JSX.Element {
   const [liveGame, SetLiveGame] = useState<LiveScore[] | undefined>(undefined);
   const [lastGame, SetLastGame] = useState<LiveScore[] | undefined>(undefined);
-  const [leagueId, setLeagueId] = useState(202);
+  const [leagueId, setLeagueId] = useState<number>(Number);
 
   useEffect(() => {
-    const league = localStorage.getItem('League');
-    const country = localStorage.getItem('Country');
+    var league = localStorage.getItem('League');
+    var country = localStorage.getItem('Country');
+       if(localStorage.getItem('League')  === null){
+            league = "202";
+            country = "62"
+        }
 
     cardFunctions.LeagueOnClick(Number(league), Number(country)).then(res => {
         SetLiveGame(res[0])
         SetLastGame(res[1])
     })
-    // cardFunctions.getApiDataLiveGame().then(liveGames => SetLiveGame(liveGames));
-    // cardFunctions.getApiDataLastGame().then(lastGames => SetLastGame(lastGames));
     ScrollToTop();
   }, [leagueId])
 
   function ClickedLeague(league: number, country: number) {
+    if(league === leagueId){
+      return;
+    }
+              SetLiveGame(undefined)
+          SetLastGame(undefined)
    cardFunctions.setLocalLeague(league, country)
-    setLeagueId(league)
+    setLeagueId(Number(league))
 
 }
   
   return (
     <div className="LiveSection">
       <div className="LeagueDiv">
-        {Leagues.map((league) => <League key={league.id} name={league.name} loader={() => {
-          SetLiveGame(undefined)
-          SetLastGame(undefined)
-        }}
-        // onclick={() => setLeagueId(league.id)}
+        {Leagues.map((league) => <League key={league.id} name={league.name}
         onclick={() => ClickedLeague(league.id,league.countryId)}
-          // onclick={() => cardFunctions.LeagueOnClick(league.id, league.countryId).then(res => {
-          //   SetLiveGame(res[0])
-          //   SetLastGame(res[1])
-          // })}
            />)}
       </div>
       <div className="containers">

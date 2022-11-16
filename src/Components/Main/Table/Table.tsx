@@ -59,9 +59,12 @@ function Table() {
     const [leagueId, setLeagueId] = useState(202);
 
     useEffect(() => {
-        const league = localStorage.getItem('League');
-        const country = localStorage.getItem('Country');
-
+        var league = localStorage.getItem('League');
+        var country = localStorage.getItem('Country');
+        if(localStorage.getItem('League')  === null){
+            league = "202";
+            country = "62"
+        }
         TableFunctionAll.getStandingByLeague(Number(league)).then(res=> {
             let promises = res.map(team => teamFucntions.getTeamLogo(team.team_key).then(img => team.logo = img));
             Promise.all(promises).then(() => setTable(res));
@@ -70,6 +73,9 @@ function Table() {
     }, [leagueId])
 
     function ClickedLeague(league: number, country: number) {
+        if(league === leagueId){
+            return;
+          }
         cardFunctions.setLocalLeague(league, country)
          setLeagueId(league)
      
