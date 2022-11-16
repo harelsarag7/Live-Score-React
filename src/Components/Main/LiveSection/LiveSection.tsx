@@ -5,7 +5,6 @@ import CardLastGame from "./CardLastGame/CardLastGame";
 import League from "../League/League";
 import { cardFunctions } from "../../../functions/CardFunctions";
 import { LiveScore } from "../../../interfaces/LiveScoreInterface";
-import { config } from "../../../config/config";
 import CardLoader from "./CardLoader/CardLoader";
 import { loaderCardsArray } from "../../../arrays/LoaderCardsArray";
 import CardLastGameLoader from "./CardLastGameLoader/CardLastGameLoader";
@@ -59,12 +58,26 @@ const Leagues = [
 function LiveSection(): JSX.Element {
   const [liveGame, SetLiveGame] = useState<LiveScore[] | undefined>(undefined);
   const [lastGame, SetLastGame] = useState<LiveScore[] | undefined>(undefined);
+  const [leagueId, setLeagueId] = useState(202);
 
   useEffect(() => {
-    cardFunctions.getApiDataLiveGame().then(liveGames => SetLiveGame(liveGames));
-    cardFunctions.getApiDataLastGame().then(lastGames => SetLastGame(lastGames));
+    const league = localStorage.getItem('League');
+    const country = localStorage.getItem('Country');
+
+    cardFunctions.LeagueOnClick(Number(league), Number(country)).then(res => {
+        SetLiveGame(res[0])
+        SetLastGame(res[1])
+    })
+    // cardFunctions.getApiDataLiveGame().then(liveGames => SetLiveGame(liveGames));
+    // cardFunctions.getApiDataLastGame().then(lastGames => SetLastGame(lastGames));
     ScrollToTop();
-  }, [])
+  }, [leagueId])
+
+  function ClickedLeague(league: number, country: number) {
+   cardFunctions.setLocalLeague(league, country)
+    setLeagueId(league)
+
+}
   
   return (
     <div className="LiveSection">
@@ -73,10 +86,13 @@ function LiveSection(): JSX.Element {
           SetLiveGame(undefined)
           SetLastGame(undefined)
         }}
-          onclick={() => cardFunctions.LeagueOnClick(league.id, league.countryId).then(res => {
-            SetLiveGame(res[0])
-            SetLastGame(res[1])
-          })} />)}
+        // onclick={() => setLeagueId(league.id)}
+        onclick={() => ClickedLeague(league.id,league.countryId)}
+          // onclick={() => cardFunctions.LeagueOnClick(league.id, league.countryId).then(res => {
+          //   SetLiveGame(res[0])
+          //   SetLastGame(res[1])
+          // })}
+           />)}
       </div>
       <div className="containers">
         <h3 className="games-header">Live Games</h3>

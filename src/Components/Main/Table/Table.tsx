@@ -1,5 +1,6 @@
 import { tab } from '@testing-library/user-event/dist/tab';
 import { useEffect, useState } from 'react';
+import { cardFunctions } from '../../../functions/CardFunctions';
 import ScrollToTop from '../../../functions/scrollUpFunction';
 import { TableFunctionAll } from '../../../functions/TableFunctions';
 import { teamFucntions } from '../../../functions/TeamsFunctions';
@@ -58,16 +59,26 @@ function Table() {
     const [leagueId, setLeagueId] = useState(202);
 
     useEffect(() => {
-        TableFunctionAll.getStandingByLeague(leagueId).then(res=> {
+        const league = localStorage.getItem('League');
+        const country = localStorage.getItem('Country');
+
+        TableFunctionAll.getStandingByLeague(Number(league)).then(res=> {
             let promises = res.map(team => teamFucntions.getTeamLogo(team.team_key).then(img => team.logo = img));
             Promise.all(promises).then(() => setTable(res));
         });
         ScrollToTop();
     }, [leagueId])
+
+    function ClickedLeague(league: number, country: number) {
+        cardFunctions.setLocalLeague(league, country)
+         setLeagueId(league)
+     
+     }
+
     return (
         <div className='Table'>
             <div className="LeagueDiv">
-                {Leagues.map((league) => <League key={league.id} name={league.name} onclick={() => setLeagueId(league.id) }/>)}
+                {Leagues.map((league) => <League key={league.id} name={league.name} onclick={() => ClickedLeague(league.id,league.countryId)}/>)}
             </div>
             <div className='TableDiv'>
                 <table>

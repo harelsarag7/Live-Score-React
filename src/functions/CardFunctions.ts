@@ -83,11 +83,12 @@ class CardFunctions {
   }
 
   async getApiDataLiveGame() {
+    
     const response = await fetch(
       `https://apiv2.allsportsapi.com/football/?met=Livescore&APIkey=${config.apiKey}`
     ).then((response) => response.json());
 
-    return response.result ? response.result : "<h3>No Games</h3>";
+    return response.result ;
   }
 
   getCards(game:LiveScore){
@@ -107,5 +108,18 @@ class CardFunctions {
       return alert(` ${home_cards} \n  ${away_cards}  `)
     }
   }
+
+
+
+   setLocalLeague(league: number, country: number) {
+    localStorage.setItem('League', league.toString());
+    localStorage.setItem('Country', country.toString());
+    return league;
+
+}
+
+
+
+
 }
 export const cardFunctions = new CardFunctions();
