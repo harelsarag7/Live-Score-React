@@ -88,8 +88,6 @@ function LiveSection(): JSX.Element {
   
   return (
     <div className="LiveSection">
-
-
       <div className="LeagueDiv">
         {Leagues.map((league) => <League key={league.id} name={league.name}
         onclick={() => ClickedLeague(league.id,league.countryId)}

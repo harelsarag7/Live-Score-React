@@ -1,9 +1,10 @@
 import ArrowDown from "./ArrowDown/ArrowDown";
+
 import "./WelcomeComponent.css";
 
-function WelcomeComponent(): JSX.Element {
+function WelcomeComponent( ): JSX.Element {
     return (
-        <div className="WelcomeComponent">
+        <div className="WelcomeComponent" >
           <h2>Live Score</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In quaerat exercitationem eos sit illum laudantium, illo pariatur quod officia excepturi iure eum sequi, debitis magni nulla officiis totam, optio nisi.
           Dolores quo reprehenderit, ipsam modi reiciendis deleniti eos architecto facilis vel, labore inventore dolorem voluptas iusto cupiditate illo quas, sed placeat officia ipsum adipisci commodi dignissimos. Atque alias vel sequi!
