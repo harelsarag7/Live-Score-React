@@ -59,14 +59,15 @@ class CardFunctions {
 
   async LeagueOnClick(leagueId: number, countryId: number) {
     const liveGames = await fetch(
-      `https://apiv2.allsportsapi.com/football/?met=Livescore&APIkey=${config.apiKey}}&countryId=${countryId}`
-    ).then((liveGames) => liveGames.json())
+      `https://apiv2.allsportsapi.com/football/?met=Livescore&APIkey=${config.apiKey2}}&countryId=${countryId}`
+    ).then((liveGames) => liveGames.json());
+    console.log(liveGames)
     const filterLiveGames = liveGames.result.filter((team: any) => team.league_key === leagueId);
 
     const yesterday = cardFunctions.getYesterdayDate();
     const dateBeforeWeek = cardFunctions.getDateBeforeWeek();
     const response = await fetch(
-      `https://apiv2.allsportsapi.com/football/?met=Fixtures&APIkey=${config.apiKey}&from=${dateBeforeWeek}&to=${yesterday}&countryId=${countryId}`
+      `https://apiv2.allsportsapi.com/football/?met=Fixtures&APIkey=${config.apiKey2}&from=${dateBeforeWeek}&to=${yesterday}&countryId=${countryId}`
     ).then((response) => response.json())
     const filterLastGames = response.result.filter((team: any) => team.league_key === leagueId)
 
@@ -76,7 +77,7 @@ class CardFunctions {
 
   async getApiDataLastGame() {
     const response = await fetch(
-      `https://apiv2.allsportsapi.com/football/?met=Fixtures&APIkey=${config.apiKey}&from=2021-05-18&to=2021-05-18`
+      `https://apiv2.allsportsapi.com/football/?met=Fixtures&APIkey=${config.apiKey2}&from=2021-05-18&to=2021-05-18`
     ).then((response) => response.json());
 
     return response.result ? response.result : "<h3>No Games</h3>";
@@ -85,7 +86,7 @@ class CardFunctions {
   async getApiDataLiveGame() {
     
     const response = await fetch(
-      `https://apiv2.allsportsapi.com/football/?met=Livescore&APIkey=${config.apiKey}`
+      `https://apiv2.allsportsapi.com/football/?met=Livescore&APIkey=${config.apiKey2}`
     ).then((response) => response.json());
 
     return response.result ;

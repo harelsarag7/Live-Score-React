@@ -16,6 +16,7 @@
 
 
 #live-games-container {
+    padding: 10px;
     height: 250px;
     display: flex ;
     overflow: auto ;
@@ -53,6 +54,7 @@
 
 
 #live-games-container-last-game {
+    padding: 10px;
     height: 250px;
     display: flex ;
     overflow: auto ;
