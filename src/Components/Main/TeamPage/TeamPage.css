@@ -1,5 +1,5 @@
 .TeamPage {
-	height: 70vh;
+	/* height: 70vh; */
     display: flex;
     /* align-items: center; */
     justify-content: center;
@@ -7,8 +7,8 @@
 }
 
 .team-container {
-    height: 60%;
-    width: 40%;
+    /* height: 90vh; */
+    /* width: 40%; */
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
@@ -21,7 +21,7 @@
 
 .layout {
     display: flex;
-    height: 40%;
+    height: 100%;
     width: 100%;
     justify-content: space-between;
     align-items: center;
@@ -29,8 +29,31 @@
 
 .LiveAndLastGamesPerTeam{
     height: 100%;
+    width: 50vw;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+}
+.TeamPage .table-container {
+    height: 350px;
+    overflow-x: hidden;
+    overflow-y: scroll ;
+    width: 60%;
+}
+.TeamPage .table-container th {
+    position: sticky;
+    top: 0;
+    background-color: white;
+}
+
+
+
+
+
+.TeamPage #team-last-games {
+    width: 100%;
+    overflow-x: scroll;
+    height: 30%;
+    display: flex;
 }

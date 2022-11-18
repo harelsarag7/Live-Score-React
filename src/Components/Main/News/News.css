@@ -1,0 +1,5 @@
+.News {
+	display: flex;
+    margin: 20px;
+    gap: 40px;
+}

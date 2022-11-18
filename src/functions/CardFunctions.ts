@@ -74,6 +74,8 @@ class CardFunctions {
     return [filterLiveGames, filterLastGames];
   }
 
+  
+
 
   async getApiDataLastGame() {
     const response = await fetch(

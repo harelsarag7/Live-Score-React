@@ -12,7 +12,8 @@
     background-size: cover;
     background-blend-mode: darken;
     background-color: #000000d4;
-
-
-
+    color: white;
+}
+.WelcomeComponent h2 {
+    font-size: 40px;
 }

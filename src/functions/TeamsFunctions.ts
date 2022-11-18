@@ -1,5 +1,6 @@
 import { config } from "../config/config"
 import { LiveScore, TeamInterface } from "../interfaces/LiveScoreInterface"
+import { cardFunctions } from "./CardFunctions";
 
  class TeamFucntions {
 
@@ -27,5 +28,25 @@ import { LiveScore, TeamInterface } from "../interfaces/LiveScoreInterface"
 
         // return response;
     }
+
+    
+  async getLastTeamGames(teamId: number) {
+    // const liveGames = await fetch(
+    //   `https://apiv2.allsportsapi.com/football/?met=Livescore&APIkey=${config.apiKey2}}&countryId=${countryId}`
+    // ).then((liveGames) => liveGames.json());
+    // console.log(liveGames)
+    // const filterLiveGames = liveGames.result.filter((team: any) => team.league_key === leagueId);
+    // let TeamID = teamId.toString()
+    const yesterday = cardFunctions.getYesterdayDate();
+    const dateBeforeWeek = cardFunctions.getDateBeforeWeek();
+    const response = await fetch(
+      `https://apiv2.allsportsapi.com/football/?met=Fixtures&APIkey=${config.apiKey2}&from=${dateBeforeWeek}&to=${yesterday}&teamId=${teamId}`
+    ).then((response) => response.json())
+    // const filterLastGames = response.result.filter((team: any) => team.league_key === leagueId)
+      console.log(response);
+      
+    return response.result;
+  }
+
 }
 export const teamFucntions = new TeamFucntions();
