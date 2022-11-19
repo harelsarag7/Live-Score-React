@@ -54,6 +54,10 @@
 .TeamPage #team-last-games {
     width: 100%;
     overflow-x: scroll;
-    height: 30%;
+    height: 50%;
+    display: flex;
+}
+
+.TeamPage .icons{
     display: flex;
 }
