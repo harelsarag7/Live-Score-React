@@ -2,6 +2,7 @@
     width: 100%;
     display: flex;
     /* direction: rtl; */
+    
 }
 
 
@@ -91,4 +92,12 @@
     background-color: #3A8891;
     padding: 10px;
     margin: auto;
+}
+
+
+
+#video-section{
+    border-radius: 15px;
+    height: 230px;
+    width: 400px;
 }
