@@ -21,10 +21,12 @@
     flex-direction: column;
     justify-content: center;
 }
-
+.rec-arrow {
+    background-color: rgba(0, 0, 0, 0.732) !important;
+}
 #live-games-container {
     padding: 10px;
-    height: 250px;
+    height: 300px;
     display: flex ;
     overflow: auto ;
     /* cursor: pointer; */

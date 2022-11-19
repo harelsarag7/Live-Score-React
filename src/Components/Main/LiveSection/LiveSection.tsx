@@ -110,27 +110,38 @@ function LiveSection(): JSX.Element {
         <h3 className="games-header">Live Games</h3>
         <div id="live-games-container">
           {liveGame === undefined
-            ? loaderCardsArray.loaderCards.map((item) =>
+            ?
+            <Carousel breakPoints={breakPoints}>
+            {loaderCardsArray.loaderCards.map((item) =>
               <CardLoader key={item.event_key} game={item} />
-            )
+            )}
+            </Carousel>
+
             : liveGame.length === 0
               ? 
               <div className="NoLiveGamesDiv">
                 <p>No Live Games</p>
               </div>
               :
-              liveGame.map((item) =>
+              <Carousel breakPoints={breakPoints}>
+              {liveGame.map((item) =>
                 <Card key={item.event_key} game={item} />
               )}
+              </Carousel>
+              }
         </div>
 
         <h3 className="games-header">Last Games</h3>
         <div id="live-games-container-last-game">
 
           {lastGame === undefined
-            ? loaderCardsArray.loaderCards.map((item) =>
+            ?
+            <Carousel breakPoints={breakPoints}>
+            {loaderCardsArray.loaderCards.map((item) =>
               <CardLastGameLoader key={item.event_key} game={item} />
-            )
+            )}
+            </Carousel>
+
             : lastGame.length === 0
               ? 'No Last Games'
               :
