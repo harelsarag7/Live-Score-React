@@ -130,16 +130,14 @@ function LiveSection(): JSX.Element {
               </Carousel>
               }
         </div>
-
         <h3 className="games-header">Last Games</h3>
         <div id="live-games-container-last-game">
-
           {lastGame === undefined
             ?
             <Carousel breakPoints={breakPoints}>
             {loaderCardsArray.loaderCards.map((item) =>
               <CardLastGameLoader key={item.event_key} game={item} />
-            )}
+              )}
             </Carousel>
 
             : lastGame.length === 0
@@ -151,6 +149,12 @@ function LiveSection(): JSX.Element {
                 ))}
              </Carousel>
 }
+        </div>
+        <div className="futureGamesAndVideo">
+              <div>
+                
+              </div>
+              <iframe id="video-section"  src="https://www.youtube.com/embed/BHQCqOpo0nk?autoplay=1&mute=1" allowFullScreen  title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ></iframe>
         </div>
       </div>
     </div>
