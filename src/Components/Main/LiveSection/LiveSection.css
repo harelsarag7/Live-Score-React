@@ -1,35 +1,41 @@
 .LiveSection{
     width: 100%;
+    display: flex;
+    /* direction: rtl; */
 }
 
 
 .LeagueDiv{
-    max-height: 10%;
-    width: 100%;
+    /* max-height: 10%; */
+    width: 15%;
     display: flex;
-    /* flex-direction: column; */
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: #3A8891;
     
 }
-
+.containers {
+    display: flex;
+    width: 90%;
+    flex-direction: column;
+    justify-content: center;
+}
 
 #live-games-container {
     padding: 10px;
     height: 250px;
     display: flex ;
     overflow: auto ;
-    cursor: pointer;
+    /* cursor: pointer; */
     position: relative;
     overflow-x: scroll;
     overflow-y: hidden;
-    white-space: nowrap;
-    transition: all 0.2s;
-    transform: scale(0.98);
-    cursor: grabbing;
+    /* white-space: nowrap; */
+    /* transition: all 0.2s; */
+    /* transform: scale(0.98); */
     /* justify-content: center; */
-    align-items: center;
+    /* align-items: center; */
 }
 
 /* #live-games-container::-webkit-scrollbar{
@@ -55,7 +61,7 @@
 
 #live-games-container-last-game {
     padding: 10px;
-    height: 250px;
+    /* height: 350px; */
     display: flex ;
     overflow: auto ;
     cursor: pointer;

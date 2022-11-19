@@ -10,26 +10,26 @@ function Home() {
     // window.addEventListener('scroll', () => handleClick);
     // window.addEventListener('scroll', () => handleClick, { passive: true });
 
-    const ref = useRef< null | HTMLDivElement>(null);
+    // const ref = useRef< null | HTMLDivElement>(null);
 
-    const handleScroll: any = () => {
+    // const handleScroll: any = () => {
         // if(ref.current){
 
-            ref.current?.scrollIntoView({behavior: 'smooth'});
+            // ref.current?.scrollIntoView({behavior: 'smooth'});
         // }
             // console.log('Scroll event ocurred ...');
-    };
+    // };
   
     // API call
     // let leauges = [`Israel's League`, 'La Liga', 'Premier League ', 'BundesLiga', 'Siries A', 'Champions League', 'World Cup']
 
     return (
-        <div  className='Home'  onClick={handleScroll}>
+        <div  className='Home'  >
             <div className='LiveSectionDiv'>
             {/* <div id='scrolling'onScroll={handleScroll}>Scroll to element</div> */}
 
-                <WelcomeComponent />
-                <div ref={ref}>Some content here</div>
+                {/* <WelcomeComponent /> */}
+                {/* <div ref={ref}>Some content here</div> */}
                 <LiveSection />
             </div>
         </div>

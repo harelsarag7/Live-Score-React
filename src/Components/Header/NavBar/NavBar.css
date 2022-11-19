@@ -7,7 +7,16 @@
 .NavBar a{
     text-decoration: none;
     color: white;
-    margin: 0 30px;
+    margin: 0 20px;
+    padding: 6px 50px;
+    /* outline: 1px solid lightcoral; */
+    background-color: rgb(37, 37, 37);
+    border-radius: 14px;
+}
+
+.NavBar a:hover {
+    background-color: rgba(27, 27, 27, 0.984);
+    text-decoration: underline;
 }
 
 .NavBar a.active{

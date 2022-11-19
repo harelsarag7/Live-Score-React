@@ -43,7 +43,7 @@ class CardFunctions {
 
   getDateBeforeWeek() {
     let today = new Date();
-    let compilerDate = new Date(today.getFullYear(), today.getMonth(), today.getDate() - 7);
+    let compilerDate = new Date(today.getFullYear(), today.getMonth(), today.getDate() - 14);
 
     let dd = String(compilerDate.getDate()).padStart(2, '0');
     let mm = String(compilerDate.getMonth() + 1).padStart(2, '0');
