@@ -9,10 +9,7 @@ import TeamPage from "./TeamPage/TeamPage";
 
 function Main() {
 
-    useEffect(() => {
-        localStorage.setItem('League', "202");
-    localStorage.setItem('Country',"62");
-    }, [])
+
     return (
         <div className="Main">
             <Routes>

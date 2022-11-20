@@ -8,7 +8,7 @@
 
 .LeagueDiv{
     /* max-height: 10%; */
-    width: 15%;
+    width: 200px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -106,7 +106,7 @@ flex-direction: column;
 align-items: center;
 /* justify-content: space-around; */
 height: 315px;
-gap: 2px;
+gap: 4px;
 width: 40%;
 overflow-y: scroll;
 }
@@ -116,4 +116,21 @@ overflow-y: scroll;
     width: 560px;
     /* display: flex; */
     margin: 0 auto;
+}
+
+#search-future-games{
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    width: 78%;
+    min-height: 40px;
+    border: none;
+    outline: 0.5px solid rgba(0, 0, 0, 0.491);
+    border-radius: 15px;
+    background-color: rgb(250, 249, 249);
+}
+
+#search-future-games::placeholder{
+position: relative;
+left: 20px;
 }

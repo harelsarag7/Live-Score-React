@@ -48,6 +48,7 @@
     width: 40px !important;
     height: 40px !important;
     border-radius: 50% !important;
+    
 }
 
 .CardLastGameLoader .score-container {
@@ -76,6 +77,6 @@
     width: 12%;
 }
 
-.home-team-image{
+/* .home-team-image{
     width: 100px;
-}
+} */

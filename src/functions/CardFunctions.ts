@@ -96,6 +96,7 @@ class CardFunctions {
       `https://apiv2.allsportsapi.com/football/?met=Fixtures&APIkey=${config.apiKey2}&from=${dateBeforeWeek}&to=${yesterday}&countryId=${countryId}`
     ).then((response) => response.json())
     const filterLastGames = response.result.filter((team: any) => team.league_key === leagueId)
+    console.log(filterLastGames);
 
     return [filterLiveGames, filterLastGames];
   }
@@ -107,8 +108,9 @@ class CardFunctions {
     const response = await fetch(
       `https://apiv2.allsportsapi.com/football/?met=Fixtures&APIkey=${config.apiKey2}&from=${tomarrow}&to=${datePlusWeek}&countryId=${countryId}`
     ).then((response) => response.json())
-    const futureGames = response.result.filter((team: any) => team.league_key === leagueId)
-      console.log("future: " + futureGames);
+    const futureGames = response.result
+    // const futureGames = response.result.filter((team: any) => team.league_key === leagueId)
+      console.log(futureGames);
       
     return futureGames;
   }
@@ -153,12 +155,12 @@ class CardFunctions {
 
 
 
-   setLocalLeague(league: number, country: number) {
-    localStorage.setItem('League', league.toString());
-    localStorage.setItem('Country', country.toString());
-    return league;
+//    setLocalLeague(league: number, country: number) {
+//     localStorage.setItem('League', league.toString());
+//     localStorage.setItem('Country', country.toString());
+//     return league;
 
-}
+// }
 
 
 

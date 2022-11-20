@@ -1,7 +1,7 @@
 .CardLoader {
     color: white;
     background-image: url("/src/cardBackgroundImage.jpg");
-    width: 350px;
+    width: 320px;
     max-height: 233px;
     border-radius: 60px;
     /* background-color: hsla(147, 86%, 44%, 0.863);  */
@@ -16,7 +16,7 @@
     align-items: center;
     height: 210px;
     flex-shrink: 0;
-    margin: 20px;
+    margin: 15px 20px;
 }
 
 
@@ -70,7 +70,9 @@
     align-items: center;
     /* top: 20px; */
 }
-
+.icons{
+    display: flex;
+}
 .icons img {
     margin: 0 25px;
     width: 12%;
