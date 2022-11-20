@@ -1,0 +1,18 @@
+.CardFuture {
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20%;
+    width: 90%;
+    height: 23%;
+    /* width: 400px; */
+    border-bottom: 1px solid gray;
+}
+
+.CardFuture:hover {
+    background-color: rgb(233, 233, 233);
+}
+.CardFuture img{
+	width: 30px;
+    height: 30px;
+}
