@@ -39,6 +39,19 @@ class CardFunctions {
     console.log(yesterday);
     return yesterday;
   }
+  getTomarrowDate() {
+    let newDate = new Date();
+    let compilerDate = new Date(newDate.getFullYear(), newDate.getMonth(), newDate.getDate() + 1);
+
+    let dd = String(compilerDate.getDate()).padStart(2, '0');
+    let mm = String(compilerDate.getMonth() + 1).padStart(2, '0'); //January is 0!
+    let yyyy = compilerDate.getFullYear();
+
+    let tomarrow = `${yyyy}-${mm}-${dd}`;
+
+    console.log(tomarrow);
+    return tomarrow;
+  }
 
 
   getDateBeforeWeek() {
@@ -53,6 +66,19 @@ class CardFunctions {
 
     console.log(dateBeforeLastWeek);
     return dateBeforeLastWeek;
+  }
+  getDatePlusWeek() {
+    let today = new Date();
+    let compilerDate = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 7);
+
+    let dd = String(compilerDate.getDate()).padStart(2, '0');
+    let mm = String(compilerDate.getMonth() + 1).padStart(2, '0');
+    let yyyy = compilerDate.getFullYear();
+
+    let datePlusWeek = `${yyyy}-${mm}-${dd}`;
+
+    console.log(datePlusWeek);
+    return datePlusWeek;
   }
 
 
@@ -72,6 +98,19 @@ class CardFunctions {
     const filterLastGames = response.result.filter((team: any) => team.league_key === leagueId)
 
     return [filterLiveGames, filterLastGames];
+  }
+
+
+  async getFuturesGamesByLeague(leagueId: number, countryId: number) {
+    const tomarrow = cardFunctions.getTomarrowDate();
+    const datePlusWeek = cardFunctions.getDatePlusWeek();
+    const response = await fetch(
+      `https://apiv2.allsportsapi.com/football/?met=Fixtures&APIkey=${config.apiKey2}&from=${tomarrow}&to=${datePlusWeek}&countryId=${countryId}`
+    ).then((response) => response.json())
+    const futureGames = response.result.filter((team: any) => team.league_key === leagueId)
+      console.log("future: " + futureGames);
+      
+    return futureGames;
   }
 
   

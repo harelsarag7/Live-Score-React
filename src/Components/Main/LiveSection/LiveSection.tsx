@@ -9,6 +9,7 @@ import CardLoader from "./CardLoader/CardLoader";
 import { loaderCardsArray } from "../../../arrays/LoaderCardsArray";
 import CardLastGameLoader from "./CardLastGameLoader/CardLastGameLoader";
 import Carousel from "react-elastic-carousel";
+import CardFuture from "./CardFuture/CardFuture";
 
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
@@ -72,6 +73,7 @@ function LiveSection(): JSX.Element {
   const [liveGame, SetLiveGame] = useState<LiveScore[] | undefined>(undefined);
   const [lastGame, SetLastGame] = useState<LiveScore[] | undefined>(undefined);
   const [leagueId, setLeagueId] = useState<number>(Number);
+  const [futureGames, SetFututreGames] = useState<LiveScore[] | undefined>(undefined)
 
   useEffect(() => {
     var league = localStorage.getItem('League');
@@ -85,6 +87,13 @@ function LiveSection(): JSX.Element {
         SetLiveGame(res[0])
         SetLastGame(res[1])
     })
+
+    cardFunctions.getFuturesGamesByLeague(Number(league), Number(country)).then((res) => {
+      SetFututreGames(res)
+    })
+
+
+
     // ScrollToTop();
   }, [leagueId])
 
@@ -140,7 +149,7 @@ function LiveSection(): JSX.Element {
               )}
             </Carousel>
 
-            : lastGame.length === 0
+            : lastGame.length === 0 || lastGame === null
               ? 'No Last Games'
               :
               <Carousel breakPoints={breakPoints}>
@@ -150,9 +159,14 @@ function LiveSection(): JSX.Element {
              </Carousel>
 }
         </div>
+
+
         <div className="futureGamesAndVideo">
-              <div>
-                
+              <div className="future-games">
+                <p>Future Games:</p>
+              {futureGames?.map((item) => (
+                <CardFuture key={item.event_key} game={item} />
+                ))}
               </div>
               <iframe id="video-section"  src="https://www.youtube.com/embed/BHQCqOpo0nk?autoplay=1&mute=1" allowFullScreen  title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ></iframe>
         </div>

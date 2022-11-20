@@ -94,10 +94,26 @@
     margin: auto;
 }
 
+.futureGamesAndVideo {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
 
-
+.futureGamesAndVideo .future-games {
+display: flex;
+flex-direction: column;
+align-items: center;
+/* justify-content: space-around; */
+height: 315px;
+gap: 2px;
+width: 40%;
+overflow-y: scroll;
+}
 #video-section{
     border-radius: 15px;
-    height: 230px;
-    width: 400px;
+    height: 315px;
+    width: 560px;
+    /* display: flex; */
+    margin: 0 auto;
 }
