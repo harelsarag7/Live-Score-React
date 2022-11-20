@@ -1451,6 +1451,505 @@ class LoaderCardsArray {
                }
              ]
            },
+           {
+             "event_key": 10740891,
+             "event_date": "2022-11-12",
+             "event_time": "12:30",
+             "event_home_team": "Sivasspor",
+             "home_team_key": 163,
+             "event_away_team": "Umraniyespor",
+             "away_team_key": 7674,
+             "event_halftime_result": "0 - 1",
+             "event_final_result": "0 - 1",
+             "event_ft_result": "",
+             "event_penalty_result": "",
+             "event_status": "30",
+             "country_name": "Turkey",
+             "league_name": "Süper Lig",
+             "league_key": 322,
+             "league_round": "Round 14",
+             "league_season": "2022/2023",
+             "event_live": "1",
+             "event_stadium": "Yeni Sivas 4 Eylul Stadium, Sivas",
+             "event_referee": "Yasar Kemal Ugurlu, Turkey",
+             "home_team_logo": "https://apiv2.allsportsapi.com/logo/163_sivasspor.jpg",
+             "away_team_logo": "https://apiv2.allsportsapi.com/logo/7674_umraniyespor.jpg",
+             "event_country_key": 111,
+             "league_logo": "https://apiv2.allsportsapi.com/logo/logo_leagues/322_süper-lig.png",
+             "country_logo": "https://apiv2.allsportsapi.com/logo/logo_country/111_turkey.png",
+             "event_home_formation": "4-2-3-1",
+             "event_away_formation": "4-3-3",
+             "fk_stage_key": 1676,
+             "stage_name": "Current",
+             "league_group": null,
+             "goalscorers": [
+               {
+                 "time": "27",
+                 "home_scorer": "",
+                 "home_scorer_id": "",
+                 "home_assist": "",
+                 "home_assist_id": "",
+                 "score": "0 - 1",
+                 "away_scorer": "B. D. Avounou",
+                 "away_scorer_id": "516901342",
+                 "away_assist": "",
+                 "away_assist_id": "",
+                 "info": "",
+                 "info_time": "1st Half"
+               }
+             ],
+             "substitutes": [
+               
+             ],
+             "cards": [
+               
+             ],
+             "lineups": {
+               "home_team": {
+                 "starting_lineups": [
+                   {
+                     "player": "Ali Sasal Vural",
+                     "player_number": 35,
+                     "player_position": 1,
+                     "player_country": null,
+                     "player_key": 2113948376,
+                     "info_time": ""
+                   },
+                   {
+                     "player": "Caner Osmanpasa",
+                     "player_number": 88,
+                     "player_position": 4,
+                     "player_country": null,
+                     "player_key": 2910649990,
+                     "info_time": ""
+                   },
+                   {
+                     "player": "Clinton N'Jie",
+                     "player_number": 10,
+                     "player_position": 8,
+                     "player_country": null,
+                     "player_key": 4121754494,
+                     "info_time": ""
+                   },
+                   {
+                     "player": "Dia Saba",
+                     "player_number": 11,
+                     "player_position": 9,
+                     "player_country": null,
+                     "player_key": 2213955500,
+                     "info_time": ""
+                   },
+                   {
+                     "player": "Dimitris Goutas",
+                     "player_number": 6,
+                     "player_position": 3,
+                     "player_country": null,
+                     "player_key": 1927065743,
+                     "info_time": ""
+                   },
+                   {
+                     "player": "Erdogan Yesilyurt",
+                     "player_number": 17,
+                     "player_position": 2,
+                     "player_country": null,
+                     "player_key": 2013511247,
+                     "info_time": ""
+                   },
+                   {
+                     "player": "Fredrik Ulvestad",
+                     "player_number": 23,
+                     "player_position": 7,
+                     "player_country": null,
+                     "player_key": 2031911867,
+                     "info_time": ""
+                   },
+                   {
+                     "player": "Max Gradel",
+                     "player_number": 7,
+                     "player_position": 10,
+                     "player_country": null,
+                     "player_key": 986827231,
+                     "info_time": ""
+                   },
+                   {
+                     "player": "Mustapha Yatabaré",
+                     "player_number": 9,
+                     "player_position": 11,
+                     "player_country": null,
+                     "player_key": 2831909022,
+                     "info_time": ""
+                   },
+                   {
+                     "player": "Robin Yalçin",
+                     "player_number": 8,
+                     "player_position": 6,
+                     "player_country": null,
+                     "player_key": 111202758,
+                     "info_time": ""
+                   },
+                   {
+                     "player": "Ziya Erdal",
+                     "player_number": 58,
+                     "player_position": 5,
+                     "player_country": null,
+                     "player_key": 2505861332,
+                     "info_time": ""
+                   }
+                 ],
+                 "substitutes": [
+                   {
+                     "player": "Ahmed Musa",
+                     "player_number": 26,
+                     "player_position": 0,
+                     "player_country": null,
+                     "player_key": 3143705761,
+                     "info_time": ""
+                   },
+                   {
+                     "player": "Charis Charisis",
+                     "player_number": 15,
+                     "player_position": 0,
+                     "player_country": null,
+                     "player_key": 676800103,
+                     "info_time": ""
+                   },
+                   {
+                     "player": "Hakan Arslan",
+                     "player_number": 37,
+                     "player_position": 0,
+                     "player_country": null,
+                     "player_key": 1695628425,
+                     "info_time": ""
+                   },
+                   {
+                     "player": "Kader Keita",
+                     "player_number": 28,
+                     "player_position": 0,
+                     "player_country": null,
+                     "player_key": 1528635437,
+                     "info_time": ""
+                   },
+                   {
+                     "player": "Karol Angielski",
+                     "player_number": 19,
+                     "player_position": 0,
+                     "player_country": null,
+                     "player_key": 3693759192,
+                     "info_time": ""
+                   },
+                   {
+                     "player": "Mehmet Albayrak",
+                     "player_number": 96,
+                     "player_position": 0,
+                     "player_country": null,
+                     "player_key": 133396314,
+                     "info_time": ""
+                   },
+                   {
+                     "player": "Muammer Yildirim",
+                     "player_number": 25,
+                     "player_position": 0,
+                     "player_country": null,
+                     "player_key": 3065749055,
+                     "info_time": ""
+                   },
+                   {
+                     "player": "Özkan Yigiter",
+                     "player_number": 62,
+                     "player_position": 0,
+                     "player_country": null,
+                     "player_key": 1788997574,
+                     "info_time": ""
+                   },
+                   {
+                     "player": "Samba Camara",
+                     "player_number": 14,
+                     "player_position": 0,
+                     "player_country": null,
+                     "player_key": 1878144606,
+                     "info_time": ""
+                   },
+                   {
+                     "player": "Ugur Çiftçi",
+                     "player_number": 3,
+                     "player_position": 0,
+                     "player_country": null,
+                     "player_key": 1706760195,
+                     "info_time": ""
+                   }
+                 ],
+                 "coaches": [
+                   {
+                     "coache": "R. Çalimbay",
+                     "coache_country": null
+                   }
+                 ],
+                 "missing_players": [
+                   
+                 ]
+               },
+               "away_team": {
+                 "starting_lineups": [
+                   {
+                     "player": "Allyson Aires Dos Santos",
+                     "player_number": 33,
+                     "player_position": 3,
+                     "player_country": null,
+                     "player_key": 451684024,
+                     "info_time": ""
+                   },
+                   {
+                     "player": "Durel Avounou",
+                     "player_number": 14,
+                     "player_position": 8,
+                     "player_country": null,
+                     "player_key": 516901342,
+                     "info_time": ""
+                   },
+                   {
+                     "player": "Geraldo",
+                     "player_number": 29,
+                     "player_position": 9,
+                     "player_country": null,
+                     "player_key": 1833231013,
+                     "info_time": ""
+                   },
+                   {
+                     "player": "Isaac Sackey",
+                     "player_number": 5,
+                     "player_position": 7,
+                     "player_country": null,
+                     "player_key": 3839893891,
+                     "info_time": ""
+                   },
+                   {
+                     "player": "Mehmet Umut Nayir",
+                     "player_number": 18,
+                     "player_position": 10,
+                     "player_country": null,
+                     "player_key": 714060321,
+                     "info_time": ""
+                   },
+                   {
+                     "player": "Onur Atasayar",
+                     "player_number": 16,
+                     "player_position": 5,
+                     "player_country": null,
+                     "player_key": 970692812,
+                     "info_time": ""
+                   },
+                   {
+                     "player": "Orkun Ozdemir",
+                     "player_number": 13,
+                     "player_position": 1,
+                     "player_country": null,
+                     "player_key": 4190723791,
+                     "info_time": ""
+                   },
+                   {
+                     "player": "Serkan Göksu",
+                     "player_number": 8,
+                     "player_position": 6,
+                     "player_country": null,
+                     "player_key": 2047596312,
+                     "info_time": ""
+                   },
+                   {
+                     "player": "Strahil Popov",
+                     "player_number": 90,
+                     "player_position": 2,
+                     "player_country": null,
+                     "player_key": 4032405788,
+                     "info_time": ""
+                   },
+                   {
+                     "player": "Tomislav Glumac",
+                     "player_number": 44,
+                     "player_position": 4,
+                     "player_country": null,
+                     "player_key": 10154903,
+                     "info_time": ""
+                   },
+                   {
+                     "player": "Yonathan Del Valle",
+                     "player_number": 28,
+                     "player_position": 11,
+                     "player_country": null,
+                     "player_key": 2674047245,
+                     "info_time": ""
+                   }
+                 ],
+                 "substitutes": [
+                   {
+                     "player": "Adel Bettaieb",
+                     "player_number": 27,
+                     "player_position": 0,
+                     "player_country": null,
+                     "player_key": 800484363,
+                     "info_time": ""
+                   },
+                   {
+                     "player": "Anil Demir",
+                     "player_number": 34,
+                     "player_position": 0,
+                     "player_country": null,
+                     "player_key": 1833228598,
+                     "info_time": ""
+                   },
+                   {
+                     "player": "Antonio Mrsic",
+                     "player_number": 39,
+                     "player_position": 0,
+                     "player_country": null,
+                     "player_key": 3630551282,
+                     "info_time": ""
+                   },
+                   {
+                     "player": "Ermir Lenjani",
+                     "player_number": 3,
+                     "player_position": 0,
+                     "player_country": null,
+                     "player_key": 3051765607,
+                     "info_time": ""
+                   },
+                   {
+                     "player": "Kartal Kayra Yilmaz",
+                     "player_number": 41,
+                     "player_position": 0,
+                     "player_country": null,
+                     "player_key": 1551724670,
+                     "info_time": ""
+                   },
+                   {
+                     "player": "Metehan Mimaroglu",
+                     "player_number": 10,
+                     "player_position": 0,
+                     "player_country": null,
+                     "player_key": 3550975273,
+                     "info_time": ""
+                   },
+                   {
+                     "player": "Mustafa Eser",
+                     "player_number": 4,
+                     "player_position": 0,
+                     "player_country": null,
+                     "player_key": 10763590,
+                     "info_time": ""
+                   },
+                   {
+                     "player": "Oguz Gürbulak",
+                     "player_number": 20,
+                     "player_position": 0,
+                     "player_country": null,
+                     "player_key": 3880213366,
+                     "info_time": ""
+                   },
+                   {
+                     "player": "Onur Ayik",
+                     "player_number": 11,
+                     "player_position": 0,
+                     "player_country": null,
+                     "player_key": 4144164485,
+                     "info_time": ""
+                   },
+                   {
+                     "player": "Valentin Gheorghe",
+                     "player_number": 7,
+                     "player_position": 0,
+                     "player_country": null,
+                     "player_key": 3430872169,
+                     "info_time": ""
+                   }
+                 ],
+                 "coaches": [
+                   {
+                     "coache": "R. Uçar",
+                     "coache_country": null
+                   }
+                 ],
+                 "missing_players": [
+                   
+                 ]
+               }
+             },
+             "statistics": [
+               {
+                 "type": "Attacks",
+                 "home": "21",
+                 "away": "30"
+               },
+               {
+                 "type": "Dangerous Attacks",
+                 "home": "8",
+                 "away": "20"
+               },
+               {
+                 "type": "On Target",
+                 "home": "0",
+                 "away": "1"
+               },
+               {
+                 "type": "Off Target",
+                 "home": "2",
+                 "away": "3"
+               },
+               {
+                 "type": "Shots Total",
+                 "home": "1",
+                 "away": "4"
+               },
+               {
+                 "type": "Shots On Goal",
+                 "home": "0",
+                 "away": "1"
+               },
+               {
+                 "type": "Shots Off Goal",
+                 "home": "0",
+                 "away": "2"
+               },
+               {
+                 "type": "Shots Blocked",
+                 "home": "1",
+                 "away": "1"
+               },
+               {
+                 "type": "Shots Inside Box",
+                 "home": "1",
+                 "away": "2"
+               },
+               {
+                 "type": "Shots Outside Box",
+                 "home": "0",
+                 "away": "2"
+               },
+               {
+                 "type": "Fouls",
+                 "home": "6",
+                 "away": "4"
+               },
+               {
+                 "type": "Corners",
+                 "home": "1",
+                 "away": "3"
+               },
+               {
+                 "type": "Ball Possession",
+                 "home": "40%",
+                 "away": "60%"
+               },
+               {
+                 "type": "Passes Total",
+                 "home": "92",
+                 "away": "135"
+               },
+               {
+                 "type": "Passes Accurate",
+                 "home": "63",
+                 "away": "105"
+               }
+             ]
+           },
    ]
 }
 export const loaderCardsArray = new LoaderCardsArray();
