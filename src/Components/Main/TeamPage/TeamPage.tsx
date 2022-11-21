@@ -21,8 +21,8 @@ const [lastGame, SetLastGame] = useState<LiveScore[] | undefined>(undefined);
 
 useEffect(() => {
     const numberTeamId = teamId["teamId"]
-    var league = localStorage.getItem('League');
-    var country = localStorage.getItem('Country');
+    var league = localStorage.getItem('league');
+    var country = localStorage.getItem('country');
     TableFunctionAll.getStandingByLeague(Number(league)).then(res=> {
       let promises = res.map(team => teamFucntions.getTeamLogo(team.team_key).then(img => team.logo = img));
       Promise.all(promises).then(() => setTable(res));
