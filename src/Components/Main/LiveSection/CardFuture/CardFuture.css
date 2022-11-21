@@ -6,12 +6,13 @@
     align-items: center;
     /* gap: 5%; */
     width: 80%;
-    height: 16%;
+    height: 100px;
     /* width: 400px; */
     border-radius: 15px;
     /* border-bottom: 1px solid gray; */
     background-color: rgb(227, 227, 227);
     line-height: 40%;
+    flex-shrink: 0;
 }
 
 .CardFuture:hover {
@@ -21,3 +22,10 @@
 	width: 25px;
     height: 25px;
 }
+
+
+@media screen and (max-width: 1000px) {
+    .CardFuture{
+        width: 400px;
+    }
+  }

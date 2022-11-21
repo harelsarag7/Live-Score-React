@@ -134,3 +134,13 @@ overflow-y: scroll;
 position: relative;
 left: 20px;
 }
+
+@media screen and (max-width: 1000px) {
+    .futureGamesAndVideo {
+      display: flex;
+      flex-direction: column;
+    }
+    .futureGamesAndVideo .future-games {
+        width:100%;
+    }
+  }
