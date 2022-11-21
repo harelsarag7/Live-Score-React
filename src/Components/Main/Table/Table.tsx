@@ -45,7 +45,7 @@ function Table() {
 
     return (
         <div className='Table'>
-            <div className="LeagueDiv">
+            <div className="LeagueDiv LeagueDivTable">
                 {general.Leagues.map((league) => <League key={league.id} image={league.image} name={league.name} onclick={() => ClickedLeague(league.id,league.countryId)}/>)}
             </div>
             <div className='TableDiv'>

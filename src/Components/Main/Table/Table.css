@@ -3,16 +3,29 @@
     height: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
     /* flex-direction: column; */
 }
 
 .Table table {
     /* width: 50%; */
     /* margin: 0 auto; */
+    height: 50%;
     justify-content: center;
 }
 
 .TableDiv{
     padding: 30px;
+}
+
+.LeagueDivTable{
+    padding-top: 30px;
+    /* align-items: flex-start; */
+    justify-content: flex-start;
+}
+
+.Table table th {
+    position: sticky;
+    top: 0;
+    background-color: white;
 }
