@@ -2,6 +2,7 @@ table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
+    
   }
   tr{
     width: 100%;
@@ -32,4 +33,9 @@ table {
     display: flex;
     gap: 8px;
     align-items: center;
+  }
+
+  .TableStracture a{
+    text-decoration: none;
+    color: black;
   }

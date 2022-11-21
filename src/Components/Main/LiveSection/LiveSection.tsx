@@ -135,8 +135,10 @@ function LiveSection(): JSX.Element {
 
         <div className="futureGamesAndVideo">
           <div className="future-games">
-            <p>Future Games:</p>
-            <input type="text" onChange={(e) => filterBySearch(e)} placeholder="Search team" name="" id="search-future-games" />
+            <div className="futureGameInputDiv">
+              <p> Future Games:</p>
+              <input type="text" onChange={(e) => filterBySearch(e)} placeholder="Search team" name="" id="search-future-games" />
+            </div>
             {futureGames?.length === 0 ? "Loading..." :
               futureGames === undefined ? "No Future Games" :
                 // {names.filter(name => name.includes('J')) 

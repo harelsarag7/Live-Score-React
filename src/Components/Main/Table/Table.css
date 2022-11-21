@@ -15,8 +15,13 @@
 }
 
 .TableDiv{
-    padding: 30px;
+    /* padding: 30px; */
+    margin: 30px;
+    height: 600px;
+    overflow: scroll;
 }
+
+
 
 .LeagueDivTable{
     padding-top: 30px;
