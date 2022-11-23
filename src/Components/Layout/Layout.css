@@ -5,6 +5,7 @@
 .Layout {
 	/* background-color: var(--dark-color); */
     /* background-color: #3A8891; */
+    background-color: var(--background-color);
 
     /* height: 100vh; */
 }

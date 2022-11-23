@@ -1,11 +1,16 @@
+import { useSelector } from "react-redux";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
 import "./Layout.css";
 
 function Layout(): JSX.Element {
+    const webMode = useSelector((state: any) => state.chosenMode.toggle)
+console.log(webMode);
+
+
     return (
-        <div className="Layout">
+        <div className="Layout" data-theme={webMode? `dark-mode`: `light-mode`}>
 			<Header />
             <Main />
             <Footer />
