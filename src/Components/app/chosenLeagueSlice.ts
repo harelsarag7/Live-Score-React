@@ -1,8 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-    league: '202',
-    country: '62'
+    league: 202,
+    country: 62
 }
 
 const chosenLeagueSlice = createSlice({
