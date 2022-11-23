@@ -10,48 +10,46 @@ import { loaderCardsArray } from "../../../arrays/LoaderCardsArray";
 import CardLastGameLoader from "./CardLastGameLoader/CardLastGameLoader";
 import Carousel from "react-elastic-carousel";
 import CardFuture from "./CardFuture/CardFuture";
-import useLocalStorage from 'react-use-localstorage';
 import { general } from "../../../interfaces/General";
+import { useDispatch, useSelector } from "react-redux";
+import { chooseCountry, chooseLeague } from "../../app/chosenLeagueSlice";
 
 
 function LiveSection(): JSX.Element {
   const [liveGame, SetLiveGame] = useState<LiveScore[] | undefined>(undefined);
   const [lastGame, SetLastGame] = useState<LiveScore[] | undefined>(undefined);
-  // const [leagueId, setLeagueId] = useState<number>(Number);
   const [futureGames, SetFututreGames] = useState<LiveScore[] | undefined>([])
-  const [localLeague, SetLocalLeague] = useLocalStorage(`league`, `202`)
-  const [localCountry, SetLocalCountry] = useLocalStorage(`country`, `62`)
   const [filteredFutureGames, setFilteredFutureGames] = useState<string>("");
 
+  const selectorLeagueLeague = useSelector((state: any) => state.chosenLeague.league)
+  const selectorLeagueCountry = useSelector((state: any) => state.chosenLeague.country)
+  let selectorLeagueDispatch = useDispatch();
+  console.log(selectorLeagueLeague)
+  console.log(selectorLeagueCountry)
 
   useEffect(() => {
-    // var league = localStorage.getItem('League');
-    // var country = localStorage.getItem('Country');
-    //    if(localStorage.getItem('League')  === null){
-    //         league = "202";
-    //         country = "62"
-    //     }
-
-    cardFunctions.LeagueOnClick(Number(localLeague), Number(localCountry)).then(res => {
+   
+    cardFunctions.LeagueOnClick(selectorLeagueLeague, selectorLeagueCountry).then(res => {
       SetLiveGame(res[0])
       SetLastGame(res[1])
     })
 
-    cardFunctions.getFuturesGamesByLeague(Number(localLeague), Number(localCountry)).then((res) => {
+    cardFunctions.getFuturesGamesByLeague(selectorLeagueLeague, selectorLeagueCountry).then((res) => {
       SetFututreGames(res)
     })
 
-  }, [localLeague, localCountry])
+  }, [selectorLeagueLeague, selectorLeagueCountry])
 
   function ClickedLeague(league: number, country: number) {
-    if (league.toString().toLocaleLowerCase() === localLeague) {
+    if (league.toString().toLocaleLowerCase() === selectorLeagueLeague.league && country.toString().toLocaleLowerCase() === selectorLeagueCountry.country) {
       return;
     }
     SetLiveGame(undefined)
     SetLastGame(undefined)
-    SetLocalLeague(league.toString().toLocaleLowerCase())
-    SetLocalCountry(country.toString().toLocaleLowerCase())
+    selectorLeagueDispatch(chooseLeague(league))
+    selectorLeagueDispatch(chooseCountry(country))
   }
+
 
 
   //     function filterBySearch(event)  {
@@ -155,3 +153,5 @@ function LiveSection(): JSX.Element {
 }
 
 export default LiveSection;
+
+

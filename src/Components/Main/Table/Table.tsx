@@ -10,22 +10,22 @@ import { standingInterface } from '../../../interfaces/TableInterface';
 import League from '../League/League';
 import './Table.css';
 import TableStracture from './TableStracture/TableStracture';
+import { useDispatch, useSelector } from "react-redux";
+import { chooseCountry, chooseLeague } from "../../app/chosenLeagueSlice";
 
 
 function Table() {
     const [table, setTable] = useState<standingInterface[]>([])
     const [leagueId, setLeagueId] = useState(202);
-    const [localLeague, SetLocalLeague] = useLocalStorage(`league`, `202`)
-    const [localCountry, SetLocalCountry] = useLocalStorage(`country`, ``)
+    const selectorLeagueLeague = useSelector((state: any) => state.chosenLeague.league)
+    const selectorLeagueCountry = useSelector((state: any) => state.chosenLeague.country)
+    let selectorLeagueDispatch = useDispatch();
+    console.log(selectorLeagueLeague)
+    console.log(selectorLeagueCountry)
+
 
     useEffect(() => {
-        var league = localStorage.getItem('league');
-        var country = localStorage.getItem('country');
-        if(localStorage.getItem('league')  === null){
-            league = "202";
-            country = "62"
-        }
-        TableFunctionAll.getStandingByLeague(Number(league)).then(res=> {
+        TableFunctionAll.getStandingByLeague(selectorLeagueLeague).then(res => {
             let promises = res.map(team => teamFucntions.getTeamLogo(team.team_key).then(img => team.logo = img));
             Promise.all(promises).then(() => setTable(res));
         });
@@ -33,33 +33,31 @@ function Table() {
     }, [leagueId])
 
     function ClickedLeague(league: number, country: number) {
-        if(league === leagueId){
+        if (league.toString().toLocaleLowerCase() === selectorLeagueLeague.league && country.toString().toLocaleLowerCase() === selectorLeagueCountry.country) {
             return;
-          }
-          SetLocalLeague(league.toString().toLocaleLowerCase())
-          SetLocalCountry(country.toString().toLocaleLowerCase())
-                //   cardFunctions.setLocalLeague(league, country)
-         setLeagueId(league)
-     
-     }
+        }
+        selectorLeagueDispatch(chooseLeague(league))
+        selectorLeagueDispatch(chooseCountry(country))
+        setLeagueId(league)
+    }
 
     return (
         <div className='Table'>
             <div className="LeagueDiv LeagueDivTable">
-                {general.Leagues.map((league) => <League key={league.id} image={league.image} name={league.name} onclick={() => ClickedLeague(league.id,league.countryId)}/>)}
+                {general.Leagues.map((league) => <League key={league.id} image={league.image} name={league.name} onclick={() => ClickedLeague(league.id, league.countryId)} />)}
             </div>
             <div className='TableDiv'>
                 <table>
                     <tr>
-                    {/* <th>Team</th> */}
-                    <th>Place</th>
-                    <th>Team</th>
-                    <th>Points</th>
-                    <th>Win</th>
-                    <th>Lose</th>
+                        {/* <th>Team</th> */}
+                        <th>Place</th>
+                        <th>Team</th>
+                        <th>Points</th>
+                        <th>Win</th>
+                        <th>Lose</th>
                     </tr>
 
-                    {table?.map((team)=> <TableStracture key={team.team_key} standing={team}/>)}
+                    {table?.map((team) => <TableStracture key={team.team_key} standing={team} />)}
                 </table>
             </div>
         </div>
