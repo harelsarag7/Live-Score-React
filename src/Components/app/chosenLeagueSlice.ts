@@ -11,11 +11,14 @@ const chosenLeagueSlice = createSlice({
   reducers: {
     chooseLeague: (state,action)=> { 
         league: state.league = action.payload
+    },
+    chooseCountry: (state,action)=> { 
         country: state.country = action.payload
-    }
+    },
+    
   }
 });
 
-export const { chooseLeague } = chosenLeagueSlice.actions
+export const { chooseLeague, chooseCountry } = chosenLeagueSlice.actions
 
 export default chosenLeagueSlice.reducer

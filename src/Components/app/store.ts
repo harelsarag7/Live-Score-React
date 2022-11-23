@@ -2,5 +2,8 @@ import { configureStore } from "@reduxjs/toolkit";
 import chosenLeagueSlice from "./chosenLeagueSlice";
 
 export const store = configureStore({
-    reducer: chosenLeagueSlice
+    reducer: {
+       chosenLeague: chosenLeagueSlice
+    }
+
 })
