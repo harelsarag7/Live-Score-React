@@ -29,16 +29,17 @@ code {
   --link-color: #EB6440;
 }
 
-html[data-theme='light-mode'] {
-  --background-color: #EFF5F5;
-  --light-color: #D6E4E5;
-  --text-color: #497174;
-  --link-color: #EB6440;
-}
 
-html[data-theme='dark-mode'] {
+.Layout[data-theme='dark-mode'] {
   --background-color: #082032;
   --light-color: #2C394B;
   --text-color: #334756;
   --link-color: #FF4C29;
+}
+
+.Layout[data-theme='light-mode'] {
+  --background-color: #EFF5F5;
+  --light-color: #D6E4E5;
+  --text-color: #497174;
+  --link-color: #EB6440
 }
