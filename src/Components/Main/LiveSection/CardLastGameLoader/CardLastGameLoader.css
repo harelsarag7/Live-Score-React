@@ -1,9 +1,9 @@
 .CardLastGameLoader {
     color: white;
     background-image: url("/src/cardBackgroundImage.jpg");
-    width: 320px;
-    max-height: 233px;
-    border-radius: 60px;
+    width: 290px;
+    /* max-height: 233px; */
+    border-radius: 50px;
     /* background-color: hsla(147, 86%, 44%, 0.863);  */
     background-color: #000000ec;
     background-size: cover;
@@ -14,7 +14,7 @@
     flex-direction: column;
     justify-content: space-around !important;
     align-items: center;
-    height: 210px;
+    height: 190px;
     flex-shrink: 0;
     margin: 15px 20px;
 }
@@ -72,9 +72,10 @@
     /* top: 20px; */
 }
 
-.icons img {
-    margin: 0 25px;
+.CardLastGameLoader .icons img {
+    margin: 0 25px 5px 25px;
     width: 12%;
+
 }
 
 /* .home-team-image{

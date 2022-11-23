@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { loaderCardsArray } from "../../../arrays/LoaderCardsArray";
 import { cardFunctions } from "../../../functions/CardFunctions";
@@ -18,12 +19,17 @@ const teamId = useParams()
 const [team, setTeam] = useState<TeamInterface>();
 const [lastGame, SetLastGame] = useState<LiveScore[] | undefined>(undefined);
 
+const SelectorLeague = useSelector((state: any) => state.chosenLeague.league)
+const LeagueDispatch = useDispatch()
+console.log(SelectorLeague);
+
+
 
 useEffect(() => {
     const numberTeamId = teamId["teamId"]
-    var league = localStorage.getItem('league');
-    var country = localStorage.getItem('country');
-    TableFunctionAll.getStandingByLeague(Number(league)).then(res=> {
+    // var league = localStorage.getItem('league');
+    // var country = localStorage.getItem('country');
+    TableFunctionAll.getStandingByLeague(SelectorLeague).then(res=> {
       let promises = res.map(team => teamFucntions.getTeamLogo(team.team_key).then(img => team.logo = img));
       Promise.all(promises).then(() => setTable(res));
   });
@@ -38,7 +44,7 @@ useEffect(() => {
         setTeam(res)
     });
         
-}, [teamId])
+}, [teamId, SelectorLeague])
 
     return (
         <div className="TeamPage">

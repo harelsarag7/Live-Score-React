@@ -1,10 +1,7 @@
-:root {
-    --border-color: rgba(0, 0, 0, 0.664);
-    
-}
+
 
 .League{
-  color: white;
+  color: var(--text-color);
     width: 200px;
     height: 45px;
     display: flex;
@@ -12,12 +9,15 @@
     cursor: pointer;
     border-radius: 8px;
     margin: 2px 20px;
+    padding: 4px 0;
     text-align: right;
 } 
 
 
   .League:hover {
-    background-color: rgb(47, 47, 47);
+    /* background-color: rgba(233, 233, 233, 0.837); */
+    background-color: rgba(238, 238, 238, 0.926);
+    color: var(--link-color);
     /* font-weight: 600; */
   } 
 

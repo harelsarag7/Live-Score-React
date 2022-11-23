@@ -75,7 +75,7 @@ function LiveSection(): JSX.Element {
     //   return item.toLowerCase().indexOf(query.toLowerCase()) !== -1;
     // });
     // const filteredAfterMap = futureGames?.filter((item)=> item.event_away_team?.includes(futureSearchValue))
-    return setFilteredFutureGames(futureSearchValue.toString())
+    return setFilteredFutureGames(futureSearchValue.toString().toLowerCase())
   }
 
 
@@ -88,7 +88,7 @@ function LiveSection(): JSX.Element {
         />)}
       </div>
       <div className="containers">
-        <h3 className="games-header">Live Games</h3>
+        <div className="games-header"><h3>Live Games</h3></div>
         <div id="live-games-container">
           {liveGame === undefined ?
             <Carousel breakPoints={general.breakPoints}>
@@ -110,7 +110,7 @@ function LiveSection(): JSX.Element {
           }
         </div>
 
-        <h3 className="games-header">Last Games</h3>
+        <div className="games-header"><h3>Last Games</h3></div>
         <div id="live-games-container-last-game">
           {lastGame === undefined ?
             <Carousel breakPoints={general.breakPoints}>
@@ -133,8 +133,8 @@ function LiveSection(): JSX.Element {
 
         <div className="futureGamesAndVideo">
           <div className="future-games">
-            <div className="futureGameInputDiv">
-              <p> Future Games:</p>
+            <div className="futureGameInputDiv games-header">
+              <h3> Future Games:</h3>
               <input type="text" onChange={(e) => filterBySearch(e)} placeholder="Search team" name="" id="search-future-games" />
             </div>
             {futureGames?.length === 0 ? "Loading..." :

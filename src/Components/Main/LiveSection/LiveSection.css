@@ -1,18 +1,28 @@
 .LiveSection {
-    width: 100%;
+    width: 90%;
     display: flex;
+    /* justify-content: center; */
+    margin: 10px auto 0 auto;
     /* direction: rtl; */
+    
 }
 
 
 .LeagueDiv {
     /* max-height: 10%; */
+    margin: 30px 20px 0 0;
     width: 200px;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    position: sticky;
+    top: 0;
+    /* justify-content: center; */
     align-items: center;
-    background-color: #3A8891;
+    /* gap: 5px; */
+    /* background-color: #3A8891; */
+    /* background-color: var(--light-color); */
+    
 
 
 }
@@ -23,14 +33,28 @@
     flex-direction: column;
     justify-content: center;
 }
+.jtKTCe button {
+    height: 17px !important;  
+    width: 17px !important;  
+}
+.cVXxbE {
+background-color: var(--link-color) !important;
+box-shadow: 0 0 1px 3px rgba(226, 119, 19, 0.474) !important;
+font-size: 20px;  
 
+}
+.sc-gKPRtg:hover {
+    box-shadow: 0 0 3px 2px rgb(27, 27, 27) !important;
+
+}
 .rec-arrow {
-    background-color: rgba(0, 0, 0, 0.732) !important;
+    /* background-color: rgba(0, 0, 0, 0.732) !important; */
+    display: none;
 }
 
 #live-games-container {
     padding: 10px;
-    height: 300px;
+    height: 278px;
     display: flex;
     overflow: auto;
     /* cursor: pointer; */
@@ -52,7 +76,7 @@
 #live-games-container::-webkit-scrollbar,
 #live-games-container-last-game::-webkit-scrollbar {
     width: 12px;
-    background-color: #F5F5F5;
+    background-color: transparent;
 
 }
 
@@ -84,16 +108,52 @@
 }
 
 .games-header {
-    border-bottom: 2px solid #000;
-    display: inline-block;
-    padding-bottom: 10px;
-    font-family: sans-serif;
+    color: var(--link-color);
+    padding: 10px;
+    line-height: 0.5;
+    text-align: center;
+}
+.games-header h3 {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    font-size: 20px;
+    color: #080808;
+    text-align: center;
+    padding-bottom: 5px;
 }
 
+
+.games-header h3:before {
+    width: 28px;
+    height: 5px;
+    display: block;
+    content: "";
+    position: absolute;
+    bottom: 3px;
+    left: 50%;
+    margin-left: -14px;
+    background-color: var(--link-color);
+  }
+  .games-header h3:after {
+    width: 100px;
+    height: 1px;
+    display: block;
+    content: "";
+    position: relative;
+    margin-top: 15px;
+    left: 50%;
+    margin-left: -50px;
+    background-color: var(--link-color);
+  }
+
+
 .NoLiveGamesDiv {
-    background-color: #3A8891;
-    padding: 10px;
+    background-color: var(--light-color);
+    padding: search-future-games 20px;
+    border-radius: 15px;
     margin: auto;
+    padding: 5px 20px;
 }
 
 .futureGamesAndVideo {
@@ -120,22 +180,31 @@
     /* display: flex; */
     margin: 0 auto;
 }
-
+.future-games {
+    overflow-x: hidden;
+}
 #search-future-games {
     /* display: flex; */
     /* justify-content: center; */
     /* align-items: center; */
-    width: 78%;
+    width: 62%;
     min-height: 40px;
+    margin-top: 10px;
     border: none;
-    outline: 0.5px solid rgba(0, 0, 0, 0.491);
-    border-radius: 15px;
+    outline: 0.3px solid rgba(220, 220, 220, 0.491);
+    border-radius: 5px;
     background-color: rgb(250, 249, 249);
+    box-shadow: -3px 3px 11px -6px rgba(0, 0, 0, 0.553);
+    border: none;
+    /* outline: 1px solid black; */
+    padding: 0 40px;
 }
 
 #search-future-games::placeholder {
-    position: relative;
-    left: 20px;
+  position: relative; 
+    /* left: 20px; */
+    top: 3px;
+    font-size: 20px;
 }
 
 .futureGameInputDiv{

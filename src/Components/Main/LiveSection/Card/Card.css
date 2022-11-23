@@ -1,9 +1,9 @@
 .Card {
     color: white;
     background-image: url("/src/cardBackgroundImage.jpg");
-    width: 320px;
-    max-height: 233px;
-    border-radius: 60px;
+    width: 290px;
+    /* max-height: 233px; */
+    border-radius: 50px;
     /* background-color: hsla(147, 86%, 44%, 0.863);  */
     background-color: #000000ec;
     background-size: cover;
@@ -14,7 +14,7 @@
     flex-direction: column;
     justify-content: space-around !important;
     align-items: center;
-    height: 210px;
+    height: 190px;
     flex-shrink: 0;
     margin: 15px 20px;
 }
@@ -24,10 +24,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-size: 11px;
 }
 .Card .team-logo {
-    width: 60px;
-    height: 60px;
+    width: 55px;
+    height: 55px;
+    margin-top: 10px;
     position: relative;
     top: 0px !important;
     /* transition: all 0.3s; */
@@ -43,7 +45,7 @@
     display: flex;
     flex-direction: column;
     text-align: center;
-    font-size: 16px;
+    font-size: 12px;
     margin:0 5px;
 }
 

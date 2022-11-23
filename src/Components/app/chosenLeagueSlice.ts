@@ -10,10 +10,10 @@ const chosenLeagueSlice = createSlice({
   initialState,
   reducers: {
     chooseLeague: (state,action)=> { 
-        league: state.league = action.payload
+          state.league = action.payload
     },
     chooseCountry: (state,action)=> { 
-        country: state.country = action.payload
+        state.country = action.payload
     },
     
   }
