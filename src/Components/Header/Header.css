@@ -1,5 +1,5 @@
 .Header {
-	width: 100%;
+    width: 100%;
     height: 11vh;
     background-color: var(--light-color);
     display: flex;
@@ -7,6 +7,7 @@
     justify-content: center;
     position: relative;
 }
+
 .header-container {
     display: flex;
     width: 80%;
@@ -14,22 +15,60 @@
     /* flex-direction: column; */
     justify-content: flex-start;
     align-items: center;
-    gap: 30px
-    ;
+    gap: 30px;
 }
-#logo{
+
+#logo {
     /* position: relative; */
     /* top: 25px; */
     color: white;
     background-image: url("../../../src/logo-no-background.png");
     min-width: 180px;
-    height: 40px ;
+    height: 40px;
     /* margin: 0 auto; */
-    background-size:cover;
+    background-size: cover;
 }
-.darkModeLightModeDiv{
+
+.darkModeLightModeDiv {
     position: absolute;
     top: 5px;
     right: 5px;
 }
 
+.CollapseButton {
+    display: none;
+}
+
+.HeaderResponsive{
+    display: none;
+}
+
+@media screen and (max-width: 630px) {
+    .header-container{
+        display: none;
+    }
+
+    .HeaderResponsive{
+        /* min-height: 100px; */
+        display: flex;
+        /* width: 100%; */
+        /* min-height: 200px; */
+        /* justify-content: space-around; */
+        flex-direction: column;
+    }
+    .HeaderLinksDivResponsive {
+    display: flex;
+    flex-direction: column;
+    }
+
+    .HeaderResponsiveContent{
+        /* position: absolute; */
+        width: 100%;
+        min-height: 100%;
+    }
+
+    /* .HeaderLinksDivResponsive{
+        display: flex;
+        flex-direction: column;
+    } */
+}

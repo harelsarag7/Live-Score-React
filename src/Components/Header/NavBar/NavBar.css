@@ -49,3 +49,16 @@
 
     }
 }
+@media screen and (max-width: 630px) {
+    .NavBar {
+      /* display: flex;
+      flex-direction: column; */
+      /* justify-content: center; */
+    }
+    .NavBar a {
+
+        padding: 6px 20px;
+        margin: 6px 10px;
+
+    }
+}
