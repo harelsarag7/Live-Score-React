@@ -49,3 +49,25 @@
 
     }
 }
+@media screen and (max-width: 600px) {
+    .NavBar {
+         /* width: 50%;  */
+         position: relative; 
+         left: 0 ; 
+         display: flex;
+         flex-direction: column;
+         width: 100vw !important;
+    }
+    .NavBar a {
+        border-top: 0.2px solid rgba(255, 255, 255, 0.414);
+        /* outline:top 1px solid red ; */
+        border-radius: 0;
+        background-color: var(--link-color);
+        padding: 10px;
+        margin: 0;
+    }
+    .NavBar a:hover {
+        background-color: rgb(238, 116, 68);
+    }
+
+}
