@@ -13,6 +13,7 @@ import CardFuture from "./CardFuture/CardFuture";
 import { general } from "../../../interfaces/General";
 import { useDispatch, useSelector } from "react-redux";
 import { chooseCountry, chooseLeague } from "../../app/chosenLeagueSlice";
+import CardLastGameOnMobile from "./CardLastGameOnMobile/CardLastGameOnMobile";
 
 
 function LiveSection(): JSX.Element {
@@ -23,7 +24,7 @@ function LiveSection(): JSX.Element {
 
   const selectorLeagueLeague = useSelector((state: any) => state.chosenLeague.league)
   const selectorLeagueCountry = useSelector((state: any) => state.chosenLeague.country)
-  let selectorLeagueDispatch = useDispatch();
+  let dispatch = useDispatch();
   console.log(selectorLeagueLeague)
   console.log(selectorLeagueCountry)
 
@@ -46,8 +47,8 @@ function LiveSection(): JSX.Element {
     }
     SetLiveGame(undefined)
     SetLastGame(undefined)
-    selectorLeagueDispatch(chooseLeague(league))
-    selectorLeagueDispatch(chooseCountry(country))
+    dispatch(chooseLeague(league))
+    dispatch(chooseCountry(country))
   }
 
 
@@ -102,15 +103,24 @@ function LiveSection(): JSX.Element {
                 <p>No Live Games</p>
               </div>
               :
+     
               <Carousel breakPoints={general.breakPoints}>
                 {liveGame.map((item) =>
                   <Card key={item.event_key} game={item} />
-                )}
+                  )}
               </Carousel>
           }
         </div>
 
         <div className="games-header"><h3>Last Games</h3></div>
+
+        <div id="live-games-container-last-game-on-mobile">
+      
+                {lastGame?.map((item) => (
+                  <CardLastGameOnMobile key={item.event_key} game={item} />
+                ))}
+        </div>
+
         <div id="live-games-container-last-game">
           {lastGame === undefined ?
             <Carousel breakPoints={general.breakPoints}>
@@ -121,7 +131,7 @@ function LiveSection(): JSX.Element {
             // "loading.."
 
             : lastGame.length === 0 ? 'No Last Games' :
-
+      
               <Carousel breakPoints={general.breakPoints}>
                 {lastGame.map((item) => (
                   <CardLastGame key={item.event_key} game={item} />

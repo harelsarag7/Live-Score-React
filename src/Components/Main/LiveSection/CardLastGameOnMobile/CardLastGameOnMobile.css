@@ -1,0 +1,81 @@
+.CardLastGameOnMobile {
+    color: white;
+    background-image: url("/src/cardBackgroundImage.jpg");
+    width: 80vw;
+    /* max-height: 210px; */
+    border-radius: 20px;
+    /* background-color: hsla(147, 86%, 44%, 0.863);  */
+    background-color: #000000ec;
+    background-size: cover;
+    /* opacity: 0.7; */
+    background-blend-mode: darken;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    margin: 10px auto;
+
+    justify-content: center !important;
+    align-items: center;
+    min-height: 40px;
+    flex-shrink: 0;
+    padding: 15px 0;
+cursor: pointer;
+-webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75); 
+box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);    /* margin: 15px 20px; */
+}
+
+.CardLastGameOnMobile  .team {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 11px;
+    width: 50px;
+}
+
+.CardLastGameOnMobile .team-logo {
+    width: 40px;
+    height: 40px;
+    margin-top: 10px;
+    position: relative;
+    top: 0px !important;
+    /* transition: all 0.3s; */
+    transition: top 0.3s ease 0s;
+}
+.CardLastGameOnMobile .team-logo:hover {
+    top: -5px !important;
+
+}
+.CardLastGameOnMobile .team-name {
+        font-size: 12px;
+        width: 120px;
+    }
+
+.CardLastGameOnMobile .score-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center !important;
+    font-size: 12px;
+    margin:auto 30px;
+}
+
+/* .score-live {
+    font-size: 16px;
+} */
+
+.CardLastGameOnMobile .info-container {
+    display: flex;
+    /* position: relative; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    margin: auto auto;
+    align-items: center !important;
+    /* top: 20px; */
+}
+
+.CardLastGameOnMobile  .icons img {
+    margin: 0 25px;
+    width: 12%;
+    padding: 12px 0 0px 0;
+}

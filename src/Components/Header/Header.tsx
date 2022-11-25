@@ -15,7 +15,7 @@ function Header(): JSX.Element {
 
     }, [webMode])
 
-    function changinMode(e: any) {
+    function changingMode(e: any) {
         if (e.checked) {
             selectorChangeModeDispatch(setDark())
         } else {
@@ -35,7 +35,7 @@ function Header(): JSX.Element {
                 </div>
                 <div className="darkModeLightModeDiv">
                     Dark/Light
-                    <input className="switch-input" id='darkLightModeInput' type="checkbox" onChange={(e) => changinMode(e.target)} name="" />
+                    <input className="switch-input" id='darkLightModeInput' type="checkbox" onChange={(e) => changingMode(e.target)} name="" />
                     <label className="input"></label>
                 </div>
             </div>

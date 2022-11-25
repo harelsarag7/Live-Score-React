@@ -22,3 +22,30 @@
 .NavBar a.active{
     font-weight: bold;
 }
+
+@media screen and (max-width: 865px) {
+    .NavBar {
+        width: 70%;
+        position: relative;
+        left: 100px;
+    }
+    .NavBar a {
+
+        padding: 6px 40px;
+        margin: 6px 15px;
+
+    }
+}
+@media screen and (max-width: 800px) {
+    .NavBar {
+         width: 50%; 
+         position: relative; 
+         right: 150px; 
+    }
+    .NavBar a {
+
+        padding: 6px 20px;
+        margin: 6px 10px;
+
+    }
+}
