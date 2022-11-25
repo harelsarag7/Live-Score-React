@@ -35,4 +35,16 @@
     width: 20px;
     height: 15px;
   }
-  
+  @media screen and (max-width: 1000px) {
+    .league-name-logo {
+      width: 180px;
+      justify-content: center;
+      margin: 2px 0px;
+
+    }
+
+    .League {
+      margin: 0;
+    }
+ 
+  }

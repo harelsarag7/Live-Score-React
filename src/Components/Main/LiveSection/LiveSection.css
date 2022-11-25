@@ -105,6 +105,8 @@ font-size: 20px;
 
 .containers {
     text-align: center;
+    margin: 0 auto;
+    width: 100%;
 }
 
 .games-header {
@@ -217,6 +219,10 @@ font-size: 20px;
     
 }
 
+#live-games-container-last-game-on-mobile {
+    display: none;
+}
+
 @media screen and (max-width: 1000px) {
     .futureGamesAndVideo {
         display: flex;
@@ -225,5 +231,34 @@ font-size: 20px;
 
     .futureGamesAndVideo .future-games {
         width: 100%;
+    }
+
+    .LiveSection {
+        flex-direction: column;
+        justify-content: center;
+        margin: 0 auto;
+    }
+    .LeagueDiv {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        margin: 2px 0;
+    }
+
+    #video-section { 
+        width: 87%;
+        height: 100%;
+    }
+
+    
+    #live-games-container-last-game-on-mobile {
+        display: block;
+        margin: 0 auto;
+    }
+
+    #live-games-container-last-game {
+        display: none;
     }
 }
