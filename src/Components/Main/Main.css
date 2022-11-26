@@ -4,3 +4,9 @@
     width: 90%;
     
 }
+
+@media screen and (max-width: 1000px) {
+    .Main {
+        width: 100%;
+    }
+}
