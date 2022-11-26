@@ -70,12 +70,12 @@
     align-items: center;
     /* top: 20px; */
 }
-.icons{
+/* .icons{
     display: flex;
-}
+} */
 .CardLoader .icons img {
     margin: 0 25px 5px 25px;
-    width: 12%;
+    width: 9%;
 }
 
 .home-team-image{

@@ -245,6 +245,7 @@ font-size: 20px;
         overflow-x: scroll;
         overflow-y: hidden;
         margin: 2px 0;
+        cursor: pointer;
     }
 
     #video-section { 

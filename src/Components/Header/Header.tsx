@@ -25,7 +25,7 @@ function Header(): JSX.Element {
     const webMode = useSelector((state: any) => state.chosenMode.toggle)
     let selectorChangeModeDispatch = useDispatch();
     // console.log("mode: "+ webMode);
-    const [isNavOpen, setIsNavOpen] = useState<boolean>(false)
+    const [isNavOpen, setIsNavOpen] = useState<boolean>(true)
 
 
     useEffect(() => {

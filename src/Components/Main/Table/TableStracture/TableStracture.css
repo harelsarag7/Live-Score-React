@@ -2,6 +2,8 @@ table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
+
+
     
   }
   tr{
@@ -9,7 +11,7 @@ table {
   }
   td, th {
     border: 1px solid #dddddd;
-    text-align: left;
+    text-align: center;
     padding: 8px;
     width: 200px;
     /* text-decoration: none; */
@@ -38,4 +40,9 @@ table {
   .TableStracture a{
     text-decoration: none;
     color: black;
+  }
+  @media screen and (max-width: 600px) {
+    td, th {
+      width: auto;
+    }
   }
