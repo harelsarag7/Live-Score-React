@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/Live-Score-React/static/css/main.9bf849ab.css",
+    "main.css": "/Live-Score-React/static/css/main.3db2f1fc.css",
     "main.js": "/Live-Score-React/static/js/main.8862589d.js",
     "static/js/787.d2626b39.chunk.js": "/Live-Score-React/static/js/787.d2626b39.chunk.js",
     "static/media/cardBackgroundImage.jpg": "/Live-Score-React/static/media/cardBackgroundImage.0b3ef77948b465243037.jpg",
     "static/media/2-28928_soccer-player-png-transparent-png__1_-removebg-preview.png": "/Live-Score-React/static/media/2-28928_soccer-player-png-transparent-png__1_-removebg-preview.44f8ca11ce7e643c5d74.png",
     "static/media/logo-no-background.png": "/Live-Score-React/static/media/logo-no-background.92ca43b34be90e06be53.png",
     "index.html": "/Live-Score-React/index.html",
-    "main.9bf849ab.css.map": "/Live-Score-React/static/css/main.9bf849ab.css.map",
+    "main.3db2f1fc.css.map": "/Live-Score-React/static/css/main.3db2f1fc.css.map",
     "main.8862589d.js.map": "/Live-Score-React/static/js/main.8862589d.js.map",
     "787.d2626b39.chunk.js.map": "/Live-Score-React/static/js/787.d2626b39.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9bf849ab.css",
+    "static/css/main.3db2f1fc.css",
     "static/js/main.8862589d.js"
   ]
 }
