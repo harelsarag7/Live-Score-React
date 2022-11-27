@@ -24,11 +24,11 @@
     height: 40px ;
     background-size:cover;
 }
-/* .darkModeLightModeDiv{
+.darkModeLightModeDiv{
     position: absolute;
-    top: 5px;
-    right: 5px;
-} */
+    left: 10px;
+    top: 15px;
+}
 
 
 /* .navOnMobile {
