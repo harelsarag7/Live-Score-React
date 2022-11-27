@@ -130,6 +130,11 @@ function Header(): JSX.Element {
             {/* <NavBar /> */}
                {/* <div id="logo" ></div> */}
                <NavBar/>
+               <div className="darkModeLightModeDiv">
+                    Dark/Light
+                  <input className="switch-input" id='darkLightModeInput' type="checkbox" onChange={(e) => changingMode(e.target)} name="" />
+                  <label className="input"></label>
+                </div>
             </Typography>
             <Search>
               <SearchIconWrapper>
