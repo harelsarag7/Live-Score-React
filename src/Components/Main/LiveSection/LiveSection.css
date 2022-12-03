@@ -253,11 +253,19 @@ font-size: 20px;
         height: 100%;
     }
 
-    
+    #live-games-container-last-game-on-desktop {
+        display: none;
+    }
     #live-games-container-last-game-on-mobile {
         display: block;
         margin: 0 auto;
+
     }
+    .mobile-last-games-list{
+        height: 400px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        }
 
     /* #live-games-container-last-game {
         display: none;

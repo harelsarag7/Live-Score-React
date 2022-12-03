@@ -137,16 +137,17 @@ function LiveSection(): JSX.Element {
           </div> :
           <div >
             <div className="games-header"><h3>Last Games</h3></div>
-
+            <div className="mobile-last-games-list">
             {lastGame.map((item) => (
               <CardLastGameOnMobile key={item.event_key} game={item} />
-            ))}
+              ))}
+              </div>
           </div>
         }
             </div>
 
 
-            <div id="live-games-container-last-game">
+            <div id="live-games-container-last-game-on-desktop">
         {lastGame === undefined ?
           <div>
             <div className="games-header"><h3>Last Games</h3></div>

@@ -21,6 +21,7 @@ import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
+import ModalComponent from "../ModalComponent/ModalComponent";
 
 
 function Header(): JSX.Element {
@@ -171,7 +172,8 @@ function Header(): JSX.Element {
                      : <LightModeIcon  fontSize="large"/>
                      }
                      </div>
-                   <label className="input">ILIe</label>
+                   {/* <label className="input">ILIe</label> */}
+                   {/* <ModalComponent/> */}
                  </div>
                  </div>
             //   isNavOpen? 
