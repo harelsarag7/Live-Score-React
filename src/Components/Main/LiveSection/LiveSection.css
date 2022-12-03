@@ -54,7 +54,7 @@ font-size: 20px;
 
 #live-games-container {
     padding: 10px;
-    height: 278px;
+    /* height: 278px; */
     display: flex;
     overflow: auto;
     /* cursor: pointer; */
@@ -90,7 +90,7 @@ font-size: 20px;
 #live-games-container-last-game {
     padding: 10px;
     /* height: 350px; */
-    display: flex;
+    /* display: flex; */
     overflow: auto;
     cursor: pointer;
     position: relative;
@@ -195,7 +195,7 @@ font-size: 20px;
     border: none;
     outline: 0.3px solid rgba(220, 220, 220, 0.491);
     border-radius: 5px;
-    background-color: rgb(255, 33, 33);
+    background-color: rgb(236, 236, 236);
     box-shadow: -3px 3px 11px -6px rgba(0, 0, 0, 0.553);
     border: none;
     /* outline: 1px solid black; */
@@ -259,7 +259,7 @@ font-size: 20px;
         margin: 0 auto;
     }
 
-    #live-games-container-last-game {
+    /* #live-games-container-last-game {
         display: none;
-    }
+    } */
 }

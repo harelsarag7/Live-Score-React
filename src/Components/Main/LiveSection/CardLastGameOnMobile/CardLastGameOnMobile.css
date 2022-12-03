@@ -2,6 +2,8 @@
     color: white;
     background-image: url("/src/cardBackgroundImage.jpg");
     width: 80vw;
+    max-width: 500px;
+
     /* max-height: 210px; */
     border-radius: 20px;
     /* background-color: hsla(147, 86%, 44%, 0.863);  */

@@ -83,22 +83,37 @@ class CardFunctions {
 
 
 
-  async LeagueOnClick(leagueId: number, countryId: number) {
-    const liveGames = await fetch(
-      `https://apiv2.allsportsapi.com/football/?met=Livescore&APIkey=${config.apiKey2}}&countryId=${countryId}`
-    ).then((liveGames) => liveGames.json());
-    console.log(liveGames)
-    const filterLiveGames = liveGames.result.filter((team: any) => team.league_key === leagueId);
+  async LeagueOnClickLast(leagueId: number, countryId: number) {
 
     const yesterday = cardFunctions.getYesterdayDate();
     const dateBeforeWeek = cardFunctions.getDateBeforeWeek();
     const response = await fetch(
       `https://apiv2.allsportsapi.com/football/?met=Fixtures&APIkey=${config.apiKey2}&from=${dateBeforeWeek}&to=${yesterday}&countryId=${countryId}`
     ).then((response) => response.json())
-    const filterLastGames = response.result.filter((team: any) => team.league_key === leagueId)
-    console.log(filterLastGames);
+    if(response.result){
 
-    return [filterLiveGames, filterLastGames];
+      const filterLastGames = response.result.filter((team: any) => team.league_key === leagueId)
+      console.log(filterLastGames);
+      
+      return filterLastGames;
+    } else {
+      console.log("harel-");
+      
+       return []
+    }
+  }
+  async LeagueOnClickLive(leagueId: number, countryId: number) {
+    const liveGames = await fetch(
+      `https://apiv2.allsportsapi.com/football/?met=Livescore&APIkey=${config.apiKey2}}&countryId=${countryId}`
+    ).then((liveGames) => liveGames.json());
+    console.log(liveGames)
+    if(liveGames.result){
+
+      const filterLiveGames = liveGames.result.filter((team: any) => team.league_key === leagueId);
+      return filterLiveGames;
+    } else {
+      return []
+    }
   }
 
 

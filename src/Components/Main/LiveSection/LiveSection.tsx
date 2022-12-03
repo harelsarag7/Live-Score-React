@@ -29,10 +29,13 @@ function LiveSection(): JSX.Element {
   console.log(selectorLeagueCountry)
 
   useEffect(() => {
-   
-    cardFunctions.LeagueOnClick(selectorLeagueLeague, selectorLeagueCountry).then(res => {
-      SetLiveGame(res[0])
-      SetLastGame(res[1])
+
+    cardFunctions.LeagueOnClickLive(selectorLeagueLeague, selectorLeagueCountry).then(res => {
+      SetLiveGame(res)
+    })
+
+    cardFunctions.LeagueOnClickLast(selectorLeagueLeague, selectorLeagueCountry).then(res => {
+      SetLastGame(res)
     })
 
     cardFunctions.getFuturesGamesByLeague(selectorLeagueLeague, selectorLeagueCountry).then((res) => {
@@ -89,77 +92,109 @@ function LiveSection(): JSX.Element {
         />)}
       </div>
       <div className="containers">
-        <div className="games-header"><h3>Live Games</h3></div>
         <div id="live-games-container">
           {liveGame === undefined ?
-            <Carousel breakPoints={general.breakPoints}>
-              {loaderCardsArray.loaderCards.map((item) =>
-                <CardLoader key={item.event_key} game={item} />
-              )}
-            </Carousel>
+            <div>
+
+              <div className="games-header"><h3>Live Games</h3></div>
+              <Carousel breakPoints={general.breakPoints}>
+                {loaderCardsArray.loaderCards.map((item) =>
+                  <CardLoader key={item.event_key} game={item} />
+                )}
+              </Carousel>
+            </div>
 
             : liveGame.length === 0 ?
-              <div className="NoLiveGamesDiv">
-                <p>No Live Games</p>
-              </div>
+              // <div className="NoLiveGamesDiv">
+              //   <p>No Live Games</p>
+              // </div>
+              <></>
               :
-     
-              <Carousel breakPoints={general.breakPoints}>
-                {liveGame.map((item) =>
-                  <Card key={item.event_key} game={item} />
+              <div>
+                <div className="games-header"><h3>Live Games</h3></div>
+
+                <Carousel breakPoints={general.breakPoints}>
+                  {liveGame.map((item) =>
+                    <Card key={item.event_key} game={item} />
                   )}
-              </Carousel>
+                </Carousel>
+              </div>
           }
         </div>
 
-        <div className="games-header"><h3>Last Games</h3></div>
+
+          <div id="live-games-container-last-game">
 
         <div id="live-games-container-last-game-on-mobile">
-      
-                {lastGame?.map((item) => (
-                  <CardLastGameOnMobile key={item.event_key} game={item} />
-                ))}
-        </div>
+        {lastGame === undefined ?
+          <div>
+              <div className="games-header"><h3>Last Games</h3></div>
+              <Carousel breakPoints={general.breakPoints}>
+                {loaderCardsArray.loaderCards.map((item) =>
+                  <CardLastGameLoader key={item.event_key} game={item} />
+                )}
+              </Carousel>
+          </div> :
+          <div >
+            <div className="games-header"><h3>Last Games</h3></div>
 
-        <div id="live-games-container-last-game">
-          {lastGame === undefined ?
+            {lastGame.map((item) => (
+              <CardLastGameOnMobile key={item.event_key} game={item} />
+            ))}
+          </div>
+        }
+            </div>
+
+
+            <div id="live-games-container-last-game">
+        {lastGame === undefined ?
+          <div>
+            <div className="games-header"><h3>Last Games</h3></div>
             <Carousel breakPoints={general.breakPoints}>
               {loaderCardsArray.loaderCards.map((item) =>
                 <CardLastGameLoader key={item.event_key} game={item} />
-              )}
+                )}
             </Carousel>
-            // "loading.."
-
-            : lastGame.length === 0 ? 'No Last Games' :
-      
-              <Carousel breakPoints={general.breakPoints}>
-                {lastGame.map((item) => (
-                  <CardLastGame key={item.event_key} game={item} />
-                ))}
-              </Carousel>
-          }
-        </div>
-
-
-        <div className="futureGamesAndVideo">
-          <div className="future-games">
-            <div className="futureGameInputDiv games-header">
-              <h3> Future Games:</h3>
-              <input type="text" onChange={(e) => filterBySearch(e)} placeholder="Search team" name="" id="search-future-games" />
             </div>
-            {futureGames?.length === 0 ? "Loading..." :
-              futureGames === undefined ? "No Future Games" :
-                // {names.filter(name => name.includes('J')) 
-                futureGames.filter(team => team.event_away_team?.toLocaleLowerCase().includes(filteredFutureGames) || team.event_home_team?.toLocaleLowerCase().includes(filteredFutureGames)).map((item) => (
-                  <CardFuture key={item.event_key} game={item} />
-                ))}
+          : lastGame.length === 0 ?
+
+            <></>
+            :
+              <div >
+
+                <div className="games-header"><h3>Last Games</h3></div>
+                <Carousel breakPoints={general.breakPoints}>
+                  {lastGame.map((item) => (
+                    <CardLastGame key={item.event_key} game={item} />
+                  ))}
+                </Carousel>
+              </div>
+        }
           </div>
-          <iframe id="video-section" src="https://www.youtube.com/embed/BHQCqOpo0nk?autoplay=1&mute=1" allowFullScreen title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ></iframe>
+          </div>
+
+
+
+      <div className="futureGamesAndVideo">
+        <div className="future-games">
+          <div className="futureGameInputDiv games-header">
+            <h3> Future Games:</h3>
+            <input type="text" onChange={(e) => filterBySearch(e)} placeholder="Search team" name="" id="search-future-games" />
+          </div>
+          {futureGames?.length === 0 ? "Loading..." :
+            futureGames === undefined ? "No Future Games" :
+              // {names.filter(name => name.includes('J')) 
+              futureGames.filter(team => team.event_away_team?.toLocaleLowerCase().includes(filteredFutureGames) || team.event_home_team?.toLocaleLowerCase().includes(filteredFutureGames)).map((item) => (
+                <CardFuture key={item.event_key} game={item} />
+              ))}
         </div>
+        <iframe id="video-section" src="https://www.youtube.com/embed/BHQCqOpo0nk?autoplay=1&mute=1" allowFullScreen title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ></iframe>
       </div>
     </div>
 
+  </div>
   );
+
 }
 
 export default LiveSection;

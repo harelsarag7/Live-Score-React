@@ -6,6 +6,8 @@ import { setDark, setLight } from "../app/lightDarkSlice";
 import "./Header.css";
 import NavBar from "./NavBar/NavBar";
 import React, { useState } from "react";
+import DarkModeIcon from '@mui/icons-material/DarkMode';
+import LightModeIcon from '@mui/icons-material/LightMode';
 
 
 
@@ -26,6 +28,7 @@ function Header(): JSX.Element {
     let selectorChangeModeDispatch = useDispatch();
     // console.log("mode: "+ webMode);
     const [isNavOpen, setIsNavOpen] = useState<boolean>(true)
+    const [isLight, setIsLight] = useState<boolean>(true)
 
 
     useEffect(() => {
@@ -33,15 +36,27 @@ function Header(): JSX.Element {
 
     }, [webMode])
 
-    function changingMode(e: any) {
-        if (e.checked) {
-            selectorChangeModeDispatch(setDark())
-        } else {
-            selectorChangeModeDispatch(setLight())
-        }
-        // console.log(webMode);
+    // function changingMode(e: any) {
+    //     if (e.checked) {
+    //         selectorChangeModeDispatch(setDark())
+    //     } else {
+    //         selectorChangeModeDispatch(setLight())
+    //     }
+    //     // console.log(webMode);
 
+    // }
+
+    function clickedWebMode() {
+      if(isLight){
+        selectorChangeModeDispatch(setDark())
+        setIsLight(!isLight)
+      } else {
+        selectorChangeModeDispatch(setLight())
+        setIsLight(!isLight)
+      }
     }
+  
+
 
 
     const Search = styled('div')(({ theme }) => ({
@@ -107,7 +122,7 @@ function Header(): JSX.Element {
         //         </div>
         //     </div>
         // </div>
-
+      <div>
         <Box sx={{ flexGrow: 1 }}>
         <AppBar position="static">
           <Toolbar>
@@ -130,13 +145,9 @@ function Header(): JSX.Element {
             {/* <NavBar /> */}
                {/* <div id="logo" ></div> */}
                <NavBar/>
-               <div className="darkModeLightModeDiv">
-                    Dark/Light
-                  <input className="switch-input" id='darkLightModeInput' type="checkbox" onChange={(e) => changingMode(e.target)} name="" />
-                  <label className="input"></label>
-                </div>
+
             </Typography>
-            <Search>
+            {/* <Search>
               <SearchIconWrapper>
                 <SearchIcon />
                 
@@ -145,11 +156,24 @@ function Header(): JSX.Element {
                 placeholder="Search…"
                 inputProps={{ 'aria-label': 'search' }}
                 />
-            </Search>
+            </Search> */}
           </Toolbar>
         </AppBar>
                 {isNavOpen? <></> :  <NavBar/>  }
+                
       </Box>
+                     <div className="darkModeLightModeDiv">
+                     {/* Dark/Light */}
+                   {/* <input className="switch-input" id='darkLightModeInput' type="checkbox"  name="" /> */}
+                   <div className="mode-icon"  onClick={clickedWebMode}>
+                     {webMode? 
+                     <DarkModeIcon fontSize="large"/>
+                     : <LightModeIcon  fontSize="large"/>
+                     }
+                     </div>
+                   <label className="input">HAREL</label>
+                 </div>
+                 </div>
             //   isNavOpen? 
             //   <NavBar/> :
             // <><>
