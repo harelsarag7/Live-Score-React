@@ -171,7 +171,7 @@ function Header(): JSX.Element {
                      : <LightModeIcon  fontSize="large"/>
                      }
                      </div>
-                   <label className="input">HAREL</label>
+                   <label className="input">ILIe</label>
                  </div>
                  </div>
             //   isNavOpen? 
