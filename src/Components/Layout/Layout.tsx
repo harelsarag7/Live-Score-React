@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
+import WelcomeComponent from "../Main/Home/WelcomeComponent/WelcomeComponent";
 import Main from "../Main/Main";
 import "./Layout.css";
 

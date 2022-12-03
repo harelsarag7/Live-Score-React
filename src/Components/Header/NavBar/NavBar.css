@@ -7,7 +7,7 @@
 
 .NavBar a{
     text-decoration: none;
-    color: white;
+    color: var(--link-color);
     margin: 0 20px;
     width: 200px;
     /* padding: 6px 50px; */

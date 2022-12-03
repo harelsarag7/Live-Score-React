@@ -1,19 +1,24 @@
 .WelcomeComponent {
 	/* position: relative; */
-    width: 100%;
-    height: 80vh;
+    width: 100vw !important;
+    height: 350px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    /* background-color: rgb(0, 33, 43); */
-    background-image: url("/src/cardBackgroundImage.jpg") ;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-blend-mode: darken;
-    background-color: #000000d4;
-    color: white;
-}
+    background-color: rgba(241, 241, 241, 0.904);
+background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1440' height='350' preserveAspectRatio='none' viewBox='0 0 1440 350'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1113%26quot%3b)' fill='none'%3e%3cpath d='M1319.039%2c327.571C1331.417%2c327.456%2c1344.849%2c326.397%2c1351.741%2c316.114C1359.306%2c304.827%2c1358.938%2c289.888%2c1352.209%2c278.083C1345.416%2c266.166%2c1332.743%2c258.158%2c1319.039%2c258.745C1306.167%2c259.296%2c1296.934%2c269.595%2c1290.45%2c280.728C1283.909%2c291.958%2c1278.494%2c305.641%2c1285.264%2c316.734C1291.866%2c327.551%2c1306.367%2c327.689%2c1319.039%2c327.571' fill='rgba(235%2c 100%2c 64%2c 0.35)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M768.74%2c26.551C778.529%2c26.301%2c786.439%2c19.347%2c791.141%2c10.758C795.638%2c2.543%2c795.887%2c-7.057%2c791.731%2c-15.449C787%2c-25.003%2c779.373%2c-33.705%2c768.74%2c-34.474C756.888%2c-35.331%2c744.708%2c-29.761%2c739.167%2c-19.249C733.899%2c-9.256%2c738.136%2c2.466%2c744.263%2c11.956C749.786%2c20.509%2c758.562%2c26.811%2c768.74%2c26.551' fill='rgba(235%2c 100%2c 64%2c 0.35)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M1228.436%2c154.352C1254.218%2c156.262%2c1278.788%2c141.589%2c1291.673%2c119.176C1304.518%2c96.832%2c1303.41%2c69.135%2c1290.119%2c47.053C1277.235%2c25.647%2c1253.374%2c12.584%2c1228.436%2c14.108C1205.689%2c15.498%2c1188.829%2c33.526%2c1178.558%2c53.869C1169.378%2c72.052%2c1170.523%2c92.628%2c1179.579%2c110.873C1189.968%2c131.802%2c1205.134%2c152.626%2c1228.436%2c154.352' fill='rgba(235%2c 100%2c 64%2c 0.35)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M1193.389%2c244.411C1223.166%2c243.096%2c1248.293%2c224.832%2c1263.506%2c199.201C1279.09%2c172.944%2c1286.164%2c140.411%2c1270.762%2c114.047C1255.467%2c87.867%2c1223.709%2c79.215%2c1193.389%2c79.181C1162.996%2c79.147%2c1132.187%2c88.331%2c1115.713%2c113.872C1097.873%2c141.532%2c1094.82%2c177.624%2c1111.651%2c205.909C1128.157%2c233.649%2c1161.141%2c245.836%2c1193.389%2c244.411' fill='rgba(235%2c 100%2c 64%2c 0.35)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M319.88%2c103.468C337.805%2c104.044%2c356.074%2c97.566%2c365.36%2c82.223C374.941%2c66.394%2c373.753%2c46.219%2c364.076%2c30.448C354.822%2c15.368%2c337.512%2c6.641%2c319.88%2c8.105C304.273%2c9.401%2c294.555%2c23.259%2c286.797%2c36.864C279.14%2c50.291%2c272.318%2c65.612%2c279.194%2c79.455C286.703%2c94.572%2c303.01%2c102.926%2c319.88%2c103.468' fill='rgba(235%2c 100%2c 64%2c 0.35)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M28.005%2c211.201C37.361%2c210.755%2c45.25%2c205.281%2c50.287%2c197.384C55.819%2c188.711%2c59.651%2c178.114%2c54.94%2c168.969C49.909%2c159.203%2c38.989%2c153.947%2c28.005%2c154.132C17.332%2c154.311%2c7.929%2c160.602%2c2.594%2c169.848C-2.738%2c179.089%2c-3.874%2c190.61%2c1.712%2c199.7C7.08%2c208.435%2c17.764%2c211.689%2c28.005%2c211.201' fill='rgba(235%2c 100%2c 64%2c 0.35)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M204.063%2c230.453C239.902%2c230.794%2c268.292%2c204.192%2c286.545%2c173.347C305.219%2c141.79%2c316.606%2c103.09%2c298.201%2c71.376C279.848%2c39.752%2c240.606%2c29.973%2c204.063%2c31.218C169.941%2c32.38%2c137.269%2c47.741%2c120.414%2c77.432C103.755%2c106.777%2c108.071%2c142.194%2c124.257%2c171.803C141.229%2c202.851%2c168.681%2c230.116%2c204.063%2c230.453' fill='rgba(235%2c 100%2c 64%2c 0.35)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M318.653%2c159.968C345.163%2c159.557%2c365.037%2c138.971%2c378.559%2c116.165C392.435%2c92.762%2c402.104%2c64.796%2c389.325%2c40.777C375.923%2c15.586%2c347.158%2c2.289%2c318.653%2c3.57C292.152%2c4.761%2c271.01%2c23.446%2c258.189%2c46.67C245.851%2c69.019%2c243.42%2c95.553%2c255.44%2c118.075C268.196%2c141.977%2c291.563%2c160.388%2c318.653%2c159.968' fill='rgba(235%2c 100%2c 64%2c 0.35)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M1376.417%2c147.072C1396.363%2c147.803%2c1412.98%2c133.449%2c1422.954%2c116.161C1432.921%2c98.884%2c1436.059%2c77.887%2c1426.394%2c60.439C1416.452%2c42.493%2c1396.932%2c32.391%2c1376.417%2c32.155C1355.464%2c31.914%2c1333.888%2c40.578%2c1324.409%2c59.266C1315.552%2c76.729%2c1325.455%2c96.108%2c1335.434%2c112.955C1345.143%2c129.346%2c1357.379%2c146.374%2c1376.417%2c147.072' fill='rgba(235%2c 100%2c 64%2c 0.35)' class='triangle-float2'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1113'%3e%3crect width='1440' height='350' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-10px%2c 0)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-5px%2c -5px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(0%2c -10px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");}
 .WelcomeComponent h2 {
     font-size: 40px;
+}
+
+.WelcomeComponent .img {
+    position:absolute;
+    left: 0;
+    background-image: url("./../../../Page_404/2-28928_soccer-player-png-transparent-png__1_-removebg-preview.png")  ;
+    width:30vw;
+    background-size:cover;
+    height: 300px;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
 }

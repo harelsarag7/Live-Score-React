@@ -31,9 +31,9 @@ code {
 
 
 .Layout[data-theme='dark-mode'] {
-  --background-color: #082032;
+  --background-color: #222222;
   --light-color: #2C394B;
-  --text-color: #334756;
+  --text-color: #dfdfdf;
   --link-color: #FF4C29;
 }
 

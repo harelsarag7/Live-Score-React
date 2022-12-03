@@ -25,10 +25,10 @@ function Home() {
 
     return (
         <div  className='Home'  >
+                <WelcomeComponent />
             <div className='LiveSectionDiv'>
             {/* <div id='scrolling'onScroll={handleScroll}>Scroll to element</div> */}
 
-                {/* <WelcomeComponent /> */}
                 {/* <div ref={ref}>Some content here</div> */}
                 <LiveSection />
             </div>

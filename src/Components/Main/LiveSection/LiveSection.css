@@ -48,30 +48,17 @@ font-size: 20px;
 
 }
 .rec-arrow {
-    /* background-color: rgba(0, 0, 0, 0.732) !important; */
     display: none;
 }
 
 #live-games-container {
     padding: 10px;
-    /* height: 278px; */
     display: flex;
     overflow: auto;
-    /* cursor: pointer; */
     position: relative;
     overflow-x: scroll;
     overflow-y: hidden;
-    /* white-space: nowrap; */
-    /* transition: all 0.2s; */
-    /* transform: scale(0.98); */
-    /* justify-content: center; */
-    /* align-items: center; */
 }
-
-/* #live-games-container::-webkit-scrollbar{
-    -webkit-box-shadow: inset 0 0 2px rgba(0,0,0,0.1);
-
-} */
 
 #live-games-container::-webkit-scrollbar,
 #live-games-container-last-game::-webkit-scrollbar {
@@ -255,14 +242,15 @@ font-size: 20px;
         margin-top: 50px;
 
     }
-
     #live-games-container-last-game-on-desktop {
         display: none;
     }
+    /* #live-games-container-last-game {
+        overflow-x: hidden;
+    } */
     #live-games-container-last-game-on-mobile {
         display: block;
         margin: 0 auto;
-
     }
     .mobile-last-games-list{
         height: 400px;

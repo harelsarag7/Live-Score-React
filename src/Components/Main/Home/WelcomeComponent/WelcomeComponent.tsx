@@ -8,7 +8,7 @@ function WelcomeComponent( ): JSX.Element {
             <div></div>
           <h2>Live Score</h2>
           <p>Lorem ipsum dolor sit amet, aut et consequuntur recusandae deserunt, praesentium fuga ratione</p>
-            
+            <div className="img"></div>
             <ArrowDown/>
           <div></div>
         
