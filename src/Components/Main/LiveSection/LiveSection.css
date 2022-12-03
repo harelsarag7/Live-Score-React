@@ -231,6 +231,7 @@ font-size: 20px;
 
     .futureGamesAndVideo .future-games {
         width: 100%;
+        height: 450px;
     }
 
     .LiveSection {
@@ -251,6 +252,8 @@ font-size: 20px;
     #video-section { 
         width: 87%;
         height: 100%;
+        margin-top: 50px;
+
     }
 
     #live-games-container-last-game-on-desktop {
@@ -266,6 +269,10 @@ font-size: 20px;
         overflow-y: scroll;
         overflow-x: hidden;
         }
+
+    .future-games {
+        height: 400px;
+    }
 
     /* #live-games-container-last-game {
         display: none;

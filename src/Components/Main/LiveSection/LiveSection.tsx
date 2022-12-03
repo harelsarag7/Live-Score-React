@@ -188,6 +188,8 @@ function LiveSection(): JSX.Element {
               futureGames.filter(team => team.event_away_team?.toLocaleLowerCase().includes(filteredFutureGames) || team.event_home_team?.toLocaleLowerCase().includes(filteredFutureGames)).map((item) => (
                 <CardFuture key={item.event_key} game={item} />
               ))}
+
+              
         </div>
         <iframe id="video-section" src="https://www.youtube.com/embed/BHQCqOpo0nk?autoplay=1&mute=1" allowFullScreen title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ></iframe>
       </div>

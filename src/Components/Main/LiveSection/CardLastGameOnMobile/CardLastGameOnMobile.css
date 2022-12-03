@@ -41,7 +41,6 @@ box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);    /* margin: 15px 20px; */
     margin-top: 10px;
     position: relative;
     top: 0px !important;
-    /* transition: all 0.3s; */
     transition: top 0.3s ease 0s;
 }
 .CardLastGameOnMobile .team-logo:hover {
@@ -62,30 +61,16 @@ box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);    /* margin: 15px 20px; */
     margin:auto 15px;
 }
 
-/* .score-live {
-    font-size: 16px;
-} */
 .CardLastGameOnMobile .score-live {
     font-size: 16px;
 }
 .CardLastGameOnMobile .info-container {
     display: flex;
-    /* position: relative; */
-    /* justify-content: center; */
-    /* align-items: center; */
-    /* margin: auto auto; */
-    /* justify-content: center !important; */
     align-items: center !important;
-    /* flex-shrink: 0; */
-    /* justify-content: space-between !important; */
-    /* text-align: center !important; */
-    /* top: 20px; */
 }
 
 .CardLastGameOnMobile  .icons img {
     margin: 0 25px;
     width: 25px;
     padding: 12px 0 0px 0;
-
-    /* justify-content: center !important; */
 }

@@ -22,43 +22,28 @@ import InputBase from '@mui/material/InputBase';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import ModalComponent from "../ModalComponent/ModalComponent";
+import { setNav } from "../app/mobileNav";
 
 
 function Header(): JSX.Element {
     const webMode = useSelector((state: any) => state.chosenMode.toggle)
-    let selectorChangeModeDispatch = useDispatch();
-    // console.log("mode: "+ webMode);
-    const [isNavOpen, setIsNavOpen] = useState<boolean>(true)
+    const navStatus = useSelector((state: any) => state.mobileNav.toggle)
+    let dispatch = useDispatch();
     const [isLight, setIsLight] = useState<boolean>(true)
-
 
     useEffect(() => {
         console.log("modeEffect: " + webMode);
-
     }, [webMode])
-
-    // function changingMode(e: any) {
-    //     if (e.checked) {
-    //         selectorChangeModeDispatch(setDark())
-    //     } else {
-    //         selectorChangeModeDispatch(setLight())
-    //     }
-    //     // console.log(webMode);
-
-    // }
 
     function clickedWebMode() {
       if(isLight){
-        selectorChangeModeDispatch(setDark())
+        dispatch(setDark())
         setIsLight(!isLight)
       } else {
-        selectorChangeModeDispatch(setLight())
+        dispatch(setLight())
         setIsLight(!isLight)
       }
     }
-  
-
-
 
     const Search = styled('div')(({ theme }) => ({
         position: 'relative',
@@ -104,25 +89,11 @@ function Header(): JSX.Element {
       
 
       function openNav() {
-        setIsNavOpen(!isNavOpen)
+        dispatch(setNav())
       }
 
 
     return (
-        // <div className="Header">
-        //     <div className="header-container">
-
-        //         <div id="logo" ></div>
-        //         <div className="HeaderLinksDiv">
-        //             <NavBar />
-        //         </div>
-        //         <div className="darkModeLightModeDiv">
-        //             Dark/Light
-        //             <input className="switch-input" id='darkLightModeInput' type="checkbox" onChange={(e) => changingMode(e.target)} name="" />
-        //             <label className="input"></label>
-        //         </div>
-        //     </div>
-        // </div>
       <div>
         <Box sx={{ flexGrow: 1 }}>
         <AppBar position="static">
@@ -136,15 +107,12 @@ function Header(): JSX.Element {
             >
               <MenuIcon />
             </IconButton>
-            {/* <NavBar /> */}
             <Typography
               variant="h6"
               noWrap
               component="div"
               sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
             >
-            {/* <NavBar /> */}
-               {/* <div id="logo" ></div> */}
                <NavBar/>
 
             </Typography>
@@ -160,25 +128,18 @@ function Header(): JSX.Element {
             </Search> */}
           </Toolbar>
         </AppBar>
-                {isNavOpen? <></> :  <NavBar/>  }
+                {navStatus? <></> :  <NavBar/>  }
                 
       </Box>
                      <div className="darkModeLightModeDiv">
-                     {/* Dark/Light */}
-                   {/* <input className="switch-input" id='darkLightModeInput' type="checkbox"  name="" /> */}
                    <div className="mode-icon"  onClick={clickedWebMode}>
                      {webMode? 
                      <DarkModeIcon fontSize="large"/>
                      : <LightModeIcon  fontSize="large"/>
                      }
                      </div>
-                   {/* <label className="input">ILIe</label> */}
-                   {/* <ModalComponent/> */}
                  </div>
                  </div>
-            //   isNavOpen? 
-            //   <NavBar/> :
-            // <><>
     );
 }
 
