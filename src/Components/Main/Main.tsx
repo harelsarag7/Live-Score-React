@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { NavLink, Route, Routes } from "react-router-dom";
 import Page_404 from "../Page_404/Page_404";
+import Youtube from "../Youtube/Youtube";
 import Home from "./Home/Home";
 import "./Main.css";
 import News from "./News/News";
@@ -21,7 +22,7 @@ function Main() {
                 <Route path="/Team/:teamId" element={<TeamPage/>}></Route>
                 <Route path="/*" element={<Page_404/>}></Route>
             </Routes>
-            
+            <Youtube/>
         </div>
     )
 }

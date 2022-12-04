@@ -3,6 +3,7 @@ import { cardFunctions } from "../../../../functions/CardFunctions";
 import { LiveScore } from "../../../../interfaces/LiveScoreInterface";
 import ModalH2HComponent from "../../../Modals/ModalH2HComponent/ModalH2HComponent";
 import ModalStatsComponent from "../../../Modals/ModalStatsComponent/ModalStatsComponent";
+import ModalVideoComponent from "../../../ModalVideoComponent/ModalVideoComponent";
 import "./CardLastGame.css"
 
 
@@ -37,7 +38,8 @@ function CardLastGame({ game }:{game:LiveScore}): JSX.Element {
 
          <div className="icons">
             <ModalStatsComponent game={game} />
-            <img className="video-icon" src="https://i.ibb.co/xqWJ1Bp/youtube.png" alt="" />
+            <ModalVideoComponent game={game} />
+            {/* <img className="video-icon" src="https://i.ibb.co/xqWJ1Bp/youtube.png" alt="" /> */}
             {/* <img className="statistic-icon" src="https://i.ibb.co/xfFn4fq/pie-chart.png" alt="" /> */}
             <ModalH2HComponent game={game} />
             {/* <img className="H2H-icon" src="https://i.ibb.co/WksBhv4/fight.png" alt="" /> */}
