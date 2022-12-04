@@ -1,0 +1,47 @@
+.h2h-container {
+	display: flex;
+    flex-direction: column;
+}
+ #row {
+	display: flex ;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: center;
+}
+
+#h2h-text{
+    width: 160px;
+}
+
+.modal-team-header {
+    width: 80px;
+}
+
+/* .h2h-icon-image {
+    width: 35px;
+    background-image: url("https://i.ibb.co/xfFn4fq/pie-chart.png");
+} */
+
+.h2h-icon-button {
+    /* margin: 0 25px; */
+    width: 40px !important;
+    padding: 0;
+    margin: 0;
+}
+
+.h2h-icon {
+    /* margin: 0 25px; */
+    width: 50% !important;
+}
+
+.css-1wnsr1i {
+    border: 20px;
+}
+
+.css-1e6y48t-MuiButtonBase-root-MuiButton-root:hover {
+    background-color: transparent !important;
+}
+
+.css-1e6y48t-MuiButtonBase-root-MuiButton-root::after {
+    background-color: transparent !important;
+}

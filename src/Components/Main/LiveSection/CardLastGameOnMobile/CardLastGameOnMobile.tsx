@@ -2,6 +2,7 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { cardFunctions } from "../../../../functions/CardFunctions";
 import { LiveScore } from "../../../../interfaces/LiveScoreInterface";
+import ModalStatsComponent from "../../../Modals/ModalStatsComponent/ModalStatsComponent";
 import "./CardLastGameOnMobile.css"
 
 
@@ -30,7 +31,7 @@ function CardLastGameOnMobile({ game }:{game:LiveScore}): JSX.Element {
          </div>
     {isOpen? 
          <div className="icons">
-            <img className="statistic-icon" src="https://i.ibb.co/xfFn4fq/pie-chart.png" alt="" />
+            <ModalStatsComponent game={game} />
             <img className="video-icon" src="https://i.ibb.co/xqWJ1Bp/youtube.png" alt="" />
             <img className="H2H-icon" src="https://i.ibb.co/WksBhv4/fight.png" alt="" />
          </div>

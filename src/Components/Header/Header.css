@@ -29,16 +29,29 @@
     justify-content: center;
     align-items: center;
     margin: auto auto;
-
 }
+
+.css-i4bv87-MuiSvgIcon-root {
+    color: black;
+}
+
+.mobile-navBar {
+    display: block !important;
+}
+.mobile-navBar a{
+    color: var(--text-color) !important;
+}
+
 @media (min-width: 600px) {
+    .mobile-navBar {
+    display: none !important;
+    }
 
     .css-hyum1k-MuiToolbar-root {
         min-height: 64px;
         width: 85%;
         margin: 0 auto;
     }
-    
 }
 
 

@@ -21,6 +21,8 @@ import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
 import MenuIcon from '@mui/icons-material/Menu';
 import { setNav } from "../app/mobileNav";
+// import ModalStatsComponent from "../ModalStatsComponent/ModalStatsComponent";
+// import { loaderCardsArray } from "../../arrays/LoaderCardsArray";
 
 
 function Header(): JSX.Element {
@@ -126,15 +128,17 @@ function Header(): JSX.Element {
             </Search> */}
           </Toolbar>
         </AppBar>
-                {navStatus? <></> :  <NavBar/>  }
+                {navStatus? <></> : <div className="mobile-navBar"> <NavBar/> </div>  }
                 
       </Box>
                      <div className="darkModeLightModeDiv">
                    <div className="mode-icon"  onClick={clickedWebMode}>
                      {webMode? 
                      <DarkModeIcon fontSize="large"/>
-                     : <LightModeIcon  fontSize="large"/>
-                     }
+                     : 
+                     <LightModeIcon  fontSize="large"/>
+                    }
+                    {/* <ModalStatsComponent game={loaderCardsArray.loaderCards[1]}/> */}
                      </div>
                  </div>
                  </div>

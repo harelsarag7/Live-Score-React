@@ -59,8 +59,12 @@
     align-items: center;
     /* top: 20px; */
 }
-
+.icons {
+    display: flex;
+    justify-content: center;
+}
 .icons img {
     margin: 0 25px;
     width: 9%;
+    /* height: 40px; */
 }
