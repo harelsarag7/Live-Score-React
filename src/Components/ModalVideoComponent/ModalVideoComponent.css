@@ -1,0 +1,51 @@
+.ModalVideoComponent {
+	
+}
+.video-container {
+	display: flex;
+    flex-direction: column;
+}
+ #row {
+	display: flex ;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: center;
+}
+
+#stat-text{
+    width: 160px;
+}
+
+.modal-team-header {
+    width: 80px;
+}
+
+/* .video-icon-image {
+    width: 35px;
+    background-image: url("https://i.ibb.co/xfFn4fq/pie-chart.png");
+} */
+
+.video-icon-button {
+    /* margin: 0 25px; */
+    width: 40px !important;
+    padding: 0;
+    margin: 0;
+}
+
+.video-icon {
+    /* margin: 0 25px; */
+    width: 50% !important;
+}
+
+.css-1wnsr1i {
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.909) !important;
+}
+
+.css-1e6y48t-MuiButtonBase-root-MuiButton-root:hover {
+    background-color: transparent !important;
+}
+
+.css-1e6y48t-MuiButtonBase-root-MuiButton-root::after {
+    background-color: transparent !important;
+}
