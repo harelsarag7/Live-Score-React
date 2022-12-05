@@ -191,7 +191,7 @@ function LiveSection(): JSX.Element {
 
               
         </div>
-        <iframe id="video-section" src="https://www.youtube.com/embed/BHQCqOpo0nk?autoplay=1&mute=1" allowFullScreen title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ></iframe>
+        <iframe id="video-section" src="https://www.youtube.com/embed/BHQCqOpo0nk?autoplay=0&mute=1" allowFullScreen title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ></iframe>
       </div>
     </div>
 

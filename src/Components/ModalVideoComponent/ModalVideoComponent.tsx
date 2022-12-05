@@ -39,7 +39,7 @@ function ModalVideoComponent({ game }: { game: LiveScore }): JSX.Element {
         .then(res => res.json()).catch(e => console.log(e));
         // (videos.items[0].id.videoId);
         const videoId = (videos.items[0].id.videoId);
-        const embedVideo:string = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1`;
+        const embedVideo:string = `https://www.youtube.com/embed/${videoId}?autoplay=0&mute=1`;
         console.log(embedVideo);
         
         return  setEmbed(embedVideo);
